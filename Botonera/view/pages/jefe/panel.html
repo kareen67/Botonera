@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FX - Biblioteca de Sonidos</title>
+    <link rel="stylesheet" href="panel-jefe.css">
+    <link rel="stylesheet" href="../../css/panel-jefe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- encabezado fx -->
+    <!-- <div class="fx-header">
+        <h1>Efectos de Sonido (FX)</h1>
+        <p>Gestiona tus efectos personales y accede a la biblioteca institucional</p>
+    </div> -->
+
+    <!-- bloque biblioteca fx -->
+    <div class="fx-library">
+        <h2><i class="fas fa-volume-up"></i> Biblioteca de FX</h2>
+        <p>Organiza y gestiona todos los efectos de sonido disponibles</p>
+    </div>
+
+    <div class="header">
+        <h1>Efectos de Sonido (FX)</h1>
+        <button class="btn big" id="openModal"><i class="fa fa-plus"></i> Agregar FX</button>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" data-target="mis-fx">Mis FX</button>
+        <button class="tab" data-target="fx-institucionales">FX Institucionales</button>
+    </div>
+
+    <!-- Grid Mis FX -->
+    <section class="fx-grid" id="mis-fx">
+
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Disparo Explosivo</h3>
+            <p>Categoría: Acción</p>
+            <p>Duración: 02:15</p>
+            <div class="fx-actions">
+                <button class="icon-btn"><i class="fa fa-pen"></i></button>
+                <button class="icon-btn delete"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Disparo Explosivo</h3>
+            <p>Categoría: Acción</p>
+            <p>Duración: 02:15</p>
+            <div class="fx-actions">
+                <button class="icon-btn"><i class="fa fa-pen"></i></button>
+                <button class="icon-btn delete"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Disparo Explosivo</h3>
+            <p>Categoría: Acción</p>
+            <p>Duración: 02:15</p>
+            <div class="fx-actions">
+                <button class="icon-btn"><i class="fa fa-pen"></i></button>
+                <button class="icon-btn delete"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Disparo Explosivo</h3>
+            <p>Categoría: Acción</p>
+            <p>Duración: 02:15</p>
+            <div class="fx-actions">
+                <button class="icon-btn"><i class="fa fa-pen"></i></button>
+                <button class="icon-btn delete"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!-- Grid FX Institucionales (inicialmente oculto) -->
+    <section class="fx-grid hidden" id="fx-institucionales">
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Campana Inicio</h3>
+            <p>Categoría: Institucional</p>
+            <p>Duración: 00:10</p>
+        </div>
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Anuncio Oficial</h3>
+            <p>Categoría: Institucional</p>
+            <p>Duración: 00:25</p>
+        </div>
+        <div class="fx-card">
+            <button class="play-btn"><i class="fa fa-play"></i></button>
+            <h3>Musiquita Fondo</h3>
+            <p>Categoría: Institucional</p>
+            <p>Duración: 01:30</p>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Agregar Nuevo FX Personal </h2>
+
+            <label>Nombre:</label>
+            <input type="text" placeholder="Ej: Disparo Explosivo">
+            <label>Categoría:</label>
+            <input type="text" placeholder="Ej: Acción">
+            <label>Archivo:</label>
+            <input type="file">
+            <div class="modal-buttons">
+                <button class="btn cancelar" id="closeModal">Cancelar</button>
+                <button class="btn primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

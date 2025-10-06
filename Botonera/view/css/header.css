@@ -1,0 +1,83 @@
+/* --- estilo general del header --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app-header {
+    background-color: #d7c3f7;
+    /* violeta claro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* menú */
+.menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s;
+}
+
+.menu a:hover {
+    color: #4b0082;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* usuario */
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.user-area:hover {
+    transform: scale(1.09);
+}
+
+.user-area i {
+    font-size: 1.4rem;
+}
+
+.exit-btn {
+    background-color: white;
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.exit-btn:hover {
+    background-color: #eee;
+}
