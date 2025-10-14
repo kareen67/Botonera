@@ -2,238 +2,140 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-}
-
-.fx-header {
-    background-color: #f9fafb;
-    /* gris clarito */
-    padding: 2rem 1rem;
-    text-align: left;
-}
-
-.fx-header h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: #111827;
-}
-
-.fx-header p {
-    font-size: 1rem;
-    color: #6b7280;
-    margin-top: .25rem;
-}
-
-.fx-library {
-    background-color: #fff;
-    border: 2px solid #e5e7eb;
-    border-radius: .5rem;
-    padding: 1.5rem 1rem;
-    margin-top: 1rem;
-}
-
-.fx-library h2 {
-    font-size: 1.25rem;
-    color: #111827;
-    margin: 0 0 .25rem 0;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
-
-.fx-library p {
-    font-size: .95rem;
-    color: #6b7280;
-    margin: 0;
+    background: #f5f6fa;
+    color: #333;
 }
 
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+
+/* --- CONTENIDO --- */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
 }
 
-.btn {
-    background: #8b5cf6;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+h1 {
+    font-size: 1.8rem;
 }
 
-.btn:hover {
-    background: #7646d1;
-}
-
-.btn.big {
-    font-size: 1.1rem;
-    padding: 12px 20px;
+p {
+    color: #666;
 }
 
 .tabs {
     display: flex;
-    gap: 5px;
-    padding: 10px 20px;
+    gap: 10px;
+    margin: 20px 0;
+    background-color: #2e1065;
+    padding: 10px;
 }
 
 .tab {
-    padding: 8px 14px;
-    border: 1px solid #050505;
-    background: #ddd;
-    border-radius: 4px;
+    border: none;
+    background: #eee;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 15px;
-
+    transition: 0.2s;
+    font-weight: 500;
+    flex: content;
+    align-items: center;
 }
 
 .tab.active {
-    background: #8b5cf6;
-    color: white;
-    font-size: 18px;
-    border: 2px solid #562283;
+    background: #7c3aed;
+    color: #fff;
 }
 
-/* Cuadrícula */
-.fx-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    padding: 20px;
+.tab:hover {
+    background: #c4b5fd;
+    color: #2e1065;
 }
 
-/* Tarjeta FX */
-.fx-card {
-    background: white;
-    border-radius: 15px;
-    border: 2px solid #562283;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 8px 9px 1px rgba(38, 2, 53, 0.303);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.fx-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-.play-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #8b5cf6;
-    border: 1px solid #000000;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: background 0.3s ease;
-
-}
-
-.play-btn:hover {
-    background: #7646d1;
-}
-
-.fx-actions {
+.panel-section {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-.icon-btn {
-    background: #8b5cf6;
-    border: none;
-    color: white;
-    padding: 6px 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.icon-btn:hover {
-    background: #7646d1;
-}
-
-.icon-btn.delete {
-    background: #d9534f;
-}
-
-.icon-btn.delete:hover {
-    background: #b63f3b;
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-content {
-    background: rgb(230, 225, 239);
-    padding: 25px;
-    border-radius: 12px;
-    width: 400px;
-    max-width: 90%;
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-content h2{
-    padding-bottom: 10px;
-}
-
-.modal-content label{
-    padding-bottom: 8px;
-    font-size: 17px;
-}
-
-.modal-content input {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #562283;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.btn.primary {
-    background: #4caf50;
-    font-size: 17px;
-}
-
-.btn.primary:hover {
-    background: #3c9441;
-}
-
-.btn.cancelar{
-    background-color: #050505;
-    font-size: 17px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .hidden {
     display: none;
+}
+
+/* --- TARJETAS --- */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    flex: 1;
+    min-width: 320px;
+}
+
+.form-card input,
+.form-card select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+.btn-primary {
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #6b21a8;
+}
+
+/* --- LISTAS --- */
+.usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rol {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.operador {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.productor {
+    background: #fee2e2;
+    color: #dc2626;
 }

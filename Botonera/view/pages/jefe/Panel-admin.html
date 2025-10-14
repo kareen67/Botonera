@@ -1,11 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel principal administracion</title>
+    <title>Panel de Administración principal</title>
+    <link rel="stylesheet" href="../../css/panel-jefe.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>Panel de Administración</h1>
+        <p>Gestiona usuarios, programas y asignaciones del sistema</p>
+
+        <div class="tabs">
+            <button class="tab active" data-target="usuarios"><i class="fa-regular fa-user"></i> Usuarios</button>
+            <button class="tab" data-target="programas"><i class="fa-solid fa-microphone"></i> Programas</button>
+            <button class="tab" data-target="asignaciones"><i class="fa-solid fa-link"></i> Asignaciones</button>
+        </div>
+
+        <!-- SECCIÓN USUARIOS -->
+        <section id="usuarios" class="panel-section">
+            <div class="card form-card">
+                <h2>+ Crear Usuario</h2>
+                <p>Agregar un nuevo usuario al sistema</p>
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre completo">
+                <label>Email</label>
+                <input type="email" placeholder="email@ejemplo.com">
+                <label>Rol</label>
+                <select>
+                    <option>Operador</option>
+                    <option>Productor</option>
+                    <option>Jefe de operadores</option>
+                </select>
+                <button class="btn-primary">Crear Usuario</button>
+            </div>
+
+            <div class="card">
+                <h2>Usuarios Existentes</h2>
+                <p>Lista de usuarios registrados</p>
+
+                <div class="usuario">
+                    <div>
+                        <h3>Ana Rodríguez</h3>
+                        <p>operador@radio.com</p>
+                    </div>
+                    <div class="acciones">
+                        <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                        <span class="rol operador">Operador</span>
+                    </div>
+                </div>
+
+                <div class="usuario">
+                    <div>
+                        <h3>Luis García</h3>
+                        <p>productor@radio.com</p>
+                    </div>
+                    <div class="acciones">
+                        <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                        <span class="rol productor">Productor</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PROGRAMAS -->
+        <section id="programas" class="panel-section hidden">
+            <div class="card form-card">
+                <h2>+ Crear Programa</h2>
+                <p>Agregar un nuevo programa al sistema</p>
+                <label>Nombre del programa</label>
+                <input type="text" placeholder="Ej: Mañanas en Vivo">
+                <label>Horario</label>
+                <input type="text" placeholder="Ej: 08:00 - 10:00">
+                <label>Descripción</label>
+                <textarea placeholder="Descripción del programa"></textarea>
+                <button class="btn-primary">Crear Programa</button>
+            </div>
+
+            <div class="card">
+                <h2>Programas Existentes</h2>
+                <p>Lista de programas registrados</p>
+
+                <div class="usuario">
+                    <div>
+                        <h3>Mañanas en Vivo</h3>
+                        <p>Programa diario de noticias y entretenimiento</p>
+                    </div>
+                    <div class="acciones">
+                        <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="usuario">
+                    <div>
+                        <h3>Tarde Musical</h3>
+                        <p>Las mejores notas musicales</p>
+                    </div>
+                    <div class="acciones">
+                        <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ASIGNACIONES -->
+        <section id="asignaciones" class="panel-section hidden">
+            <div class="card form-card">
+                <h2>+ Nueva Asignación</h2>
+                <p>Asignar un operador a un programa</p>
+                <label>Programa</label>
+                <select>
+                    <option>Mañanas en Vivo</option>
+                    <option>Tarde Musical</option>
+                </select>
+                <label>Operador</label>
+                <select>
+                    <option>Ana Rodríguez</option>
+                    <option>Luis García</option>
+                </select>
+                <button class="btn-primary">Crear Asignación</button>
+            </div>
+
+            <div class="card">
+                <h2>Asignaciones Existentes</h2>
+                <p>Lista de asignaciones activas</p>
+
+                <div class="usuario">
+                    <div>
+                        <h3>Mañanas en Vivo</h3>
+                        <p>Operador: Ana Rodríguez</p>
+                    </div>
+                    <div class="acciones">
+                        <button><i class="fa-solid fa-pen"></i> Editar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('.panel-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.add('hidden'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target).classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
+
 </html>
