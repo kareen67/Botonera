@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="lado-izquierdo">
+            <div class="forma-abstracta forma-1"></div>
+            <div class="forma-abstracta forma-2"></div>
+            <div class="forma-abstracta forma-3"></div>
+            <!-- <div class="particulas" id="particula"></div> -->
+        </div>
+
+        <div class="lado-derecho">
+            <div class="contenedor-formulario">
+                <h2 class="titulo">Iniciar Sesión</h2>
+
+                <form class="formulario" id="form-login" method="post">
+                    <div class="grupo-campo">
+                        <label for="correo" class="etiqueta">E-mail</label>
+                        <input type="email" name="email" id="correo" class="entrada" placeholder="Tu correo electrónico" required>
+                    </div>
+
+                    <div class="grupo-contraseñas">
+                        <div class="grupo-campo">
+                            <label for="clave" class="etiqueta">Contraseña</label>
+                            <input type="password" name="password" id="clave" class="entrada" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Iniciar Sesion" name="ingresar" class="boton">
+                </form>
+
+                <div id="mensaje" class="mensaje"></div>
+            </div>
+        </div>
+    </div>
+
+    <?php 
+    include("../controller/conexionBD.php");
+    include("../model/login.php");
+    ?>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

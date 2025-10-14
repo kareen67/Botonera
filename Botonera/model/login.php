@@ -18,7 +18,7 @@ if (!empty($_POST["ingresar"])) {
             // Verifica la contraseña ingresada contra la hasheada
             if (password_verify($password, $usuario->password)) {
                 $_SESSION["usuario"] = $usuario->email;
-                header("Location: ../../index.html");
+                header("Location: ../index.html");
                 exit();
             } else {
                 echo 'Error en Usuario y/o Contraseña';
