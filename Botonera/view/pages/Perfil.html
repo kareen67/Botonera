@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil-Usuario</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../view/css/Perfil.css">
+</head>
+
+<body>
+    <div class="perfil-container">
+        <!-- Información Personal -->
+        <div class="card info-personal">
+            <h2><i class="fa-solid fa-user"></i> Información Personal</h2>
+            <p class="subtitulo">Detalles de tu cuenta en el sistema</p>
+
+            <div class="usuario">
+                <div class="avatar">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                <div>
+                    <h3>Carlos Mendez</h3>
+                    <p>jefe@radio.com</p>
+                </div>
+            </div>
+
+            <div class="campo">
+                <span class="label"><i class="fa-regular fa-envelope"></i> Email</span>
+                <p class="valor">jefe@radio.com</p>
+            </div>
+
+            <div class="campo">
+                <span class="label"><i class="fa-solid fa-key"></i> Rol</span>
+                <p class="valor">
+                    Administrador del sistema con acceso completo
+                    <span class="rol-tag">Jefe de Operadores</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Cambiar Contraseña -->
+        <div class="card cambiar-pass">
+            <h2><i class="fa-solid fa-lock"></i> Cambiar Contraseña</h2>
+            <p class="subtitulo">Actualiza tu contraseña para mantener tu cuenta segura</p>
+
+            <form>
+                <label>Contraseña Actual</label>
+                <input type="password" placeholder="Ingresa tu contraseña actual">
+
+                <label>Nueva Contraseña</label>
+                <input type="password" placeholder="Ingresa tu nueva contraseña">
+
+                <label>Confirmar Nueva Contraseña</label>
+                <input type="password" placeholder="Confirma tu nueva contraseña">
+
+                <button type="submit">Actualizar Contraseña</button>
+            </form>
+
+            <div class="consejos">
+                <h4>Consejos de Seguridad</h4>
+                <ul>
+                    <li>Usa al menos 8 caracteres</li>
+                    <li>Incluye mayúsculas y minúsculas</li>
+                    <li>Agrega números y símbolos</li>
+                    <li>No uses información personal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
