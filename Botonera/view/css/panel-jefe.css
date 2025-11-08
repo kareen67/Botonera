@@ -1,3 +1,15 @@
+:root {
+    --fondo: #1a0826;
+    --fondo-tarjeta: #2a0b3f;
+    --violeta: #7b2cbf;
+    --violeta-claro: #b892ff;
+    --violeta-neon: #c77dff;
+    --texto: #f3e8ff;
+    --gris-suave: #b8a9c9;
+    --sombra: rgba(100, 50, 150, 0.3);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +18,7 @@
 }
 
 body {
-    background: #f5f6fa;
+    background: var(--fondo);
     color: #333;
 }
 

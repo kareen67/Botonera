@@ -5,83 +5,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efectos de Sonido (FX)</title>
-    <link rel="stylesheet" href="../../css/fx-institucionales.css">
+    <link rel="stylesheet" href="fx-estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <section class="fx-section">
-        <h1>Efectos de Sonido (FX)</h1>
-        <p class="subtitulo">
-            Gestiona tus efectos personales y accede a la biblioteca institucional
-        </p>
+    <main class="contenido">
 
-        <div class="fx-container">
+        <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>
+        <p class="subtexto">Gestiona tus efectos personales y accede a la biblioteca institucional</p>
+
+        <section class="fx-section">
             <div class="fx-header">
-                <div class="fx-info">
-                    <h2>🎧 Biblioteca de FX</h2>
-                    <p>Organiza y administra todos los efectos de sonido disponibles</p>
-                </div>
-                <div class="fx-buttons">
-                    <button class="btn-primario">+ Agregar FX</button>
-                </div>
-                <div class="fx-buttons">
-                    <button class="btn-secundario">FX Institucionales</button>
+                <h3><i class="fa-solid fa-music"></i> Biblioteca de FX</h3>
+                <button id="openModal" class="agregar-fx">
+                    <i class="fa-solid fa-plus"></i> Agregar FX
+                </button>
+            </div>
 
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-target="misFx"><i class="fa-regular fa-user"></i> Mis FX</button>
+                <button class="tab" data-target="institucionales"><i class="fa-solid fa-building"></i> FX
+                    Institucionales</button>
+            </div>
+
+            <!-- MIS FX (grid) -->
+            <div id="misFx" class="fx-grid">
+                <div class="fx-item">
+                    <span class="categoria intro">Intro</span>
+                    <div class="fx-info">
+                        <h4>Inicio Programa</h4>
+                        <div class="fx-meta">
+                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
+                        </div>
+                    </div>
+                    <button class="play"><i class="fa-solid fa-play"></i></button>
+                    <div class="menu">
+                        <button class="menu-toggle"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <div class="menu-opciones">
+                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fx-item">
+                    <span class="categoria transicion">Transición</span>
+                    <div class="fx-info">
+                        <h4>Cortina Noticias</h4>
+                        <div class="fx-meta">
+                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:10</span>
+                        </div>
+                    </div>
+                    <button class="play"><i class="fa-solid fa-play"></i></button>
+                    <div class="menu">
+                        <button class="menu-toggle"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <div class="menu-opciones">
+                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <table class="tabla-fx">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Duración</th>
-                        <th>Categoría</th>
-                        <th>Archivo</th>
-                        <th>Propietario</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>El Estación</td>
-                        <td>0:05</td>
-                        <td><span class="tag tag-purple">ID</span></td>
-                        <td>id_estacion.mp3</td>
-                        <td>Sistema</td>
-                        <td class="acciones">
-                            <button class="btn-icon play">▶</button>
-                            <button class="btn-icon edit">✏️</button>
-                            <button class="btn-icon delete">🗑️</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cortina Noticias</td>
-                        <td>0:10</td>
-                        <td><span class="tag tag-red">Noticiero</span></td>
-                        <td>cortina_noticias.mp3</td>
-                        <td>Sistema</td>
-                        <td class="acciones">
-                            <button class="btn-icon play">▶</button>
-                            <button class="btn-icon edit">✏️</button>
-                            <button class="btn-icon delete">🗑️</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Efecto Transición</td>
-                        <td>0:03</td>
-                        <td><span class="tag tag-green">Transición</span></td>
-                        <td>transicion.mp3</td>
-                        <td>Sistema</td>
-                        <td class="acciones">
-                            <button class="btn-icon play">▶</button>
-                            <button class="btn-icon edit">✏️</button>
-                            <button class="btn-icon delete">🗑️</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- FX INSTITUCIONALES (tabla) -->
+            <div id="institucionales" class="fx-tabla hidden">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Duración</th>
+                            <th>Categoría</th>
+                            <th>Archivo</th>
+                            <th>Propietario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ID Estación</td>
+                            <td>0:05</td>
+                            <td><span class="categoria intro">ID</span></td>
+                            <td>id_estacion.mp3</td>
+                            <td>Sistema</td>
+                            <td class="acciones">
+                                <button class="play"><i class="fa-solid fa-play"></i></button>
+                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cortina Noticias</td>
+                            <td>0:10</td>
+                            <td><span class="categoria transicion">Noticias</span></td>
+                            <td>cortina_noticias.mp3</td>
+                            <td>Sistema</td>
+                            <td class="acciones">
+                                <button class="play"><i class="fa-solid fa-play"></i></button>
+                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- MODAL -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h4>Agregar FX</h4>
+                <button id="closeModal" class="close"><i class="fa-solid fa-xmark"></i></button>
+                <p>Contenido del formulario aquí...</p>
+            </div>
         </div>
-    </section>
+
+    </main>
+
+    <script>
+        // Modal
+        document.getElementById("openModal").onclick = () => {
+            document.getElementById("modal").style.display = "flex";
+        };
+        document.getElementById("closeModal").onclick = () => {
+            document.getElementById("modal").style.display = "none";
+        };
+
+        // Tabs
+        const tabs = document.querySelectorAll('.tab');
+        const grids = document.querySelectorAll('.fx-grid, .fx-tabla');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                grids.forEach(grid => grid.classList.add('hidden'));
+                document.getElementById(tab.dataset.target).classList.remove('hidden');
+            });
+        });
+
+        // Menú de opciones
+        document.querySelectorAll('.menu-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const menu = btn.nextElementSibling;
+                menu.classList.toggle('show');
+            });
+        });
+
+        // Botón play animado
+        document.querySelectorAll('.play').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('playing');
+                btn.innerHTML = btn.classList.contains('playing')
+                    ? '<i class="fa-solid fa-pause"></i>'
+                    : '<i class="fa-solid fa-play"></i>';
+            });
+        });
+    </script>
 </body>
 
 </html>

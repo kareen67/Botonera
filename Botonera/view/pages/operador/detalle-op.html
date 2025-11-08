@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FX del Programa - Productor</title>
+    <link rel="stylesheet" href="../../css/detalle-fx-op.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+    <main class="contenido">
+
+        <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
+
+        <!-- SECCIÓN DEL PROGRAMA -->
+        <section class="programa">
+            <div class="info-programa">
+                <h2>Tarde Musical</h2>
+                <p class="descripcion">Los mejores éxitos musicales</p>
+                <div class="detalles">
+                    <p><i class="fa-regular fa-clock"></i> <b>Horario:</b> 14:00 - 18:00</p>
+                    <p><i class="fa-solid fa-headset"></i> <b>Operador:</b> Ana Rodríguez</p>
+                    <p><i class="fa-solid fa-user-gear"></i> <b>Productor:</b> Luis García</p>
+                </div>
+                <span class="etiqueta">Edición</span>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE FX -->
+        <section class="fx-section">
+            <div class="fx-header">
+                <h3><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h3>
+                <button class="agregar-fx"><i class="fa-solid fa-plus"></i> Agregar FX</button>
+            </div>
+            <p class="subtexto">Gestiona los efectos de sonido del programa</p>
+
+            <div class="fx-lista">
+                <!-- Tarjeta FX -->
+                <div class="fx-item">
+                    <span class="fx-etiqueta">Intro</span>
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="menu-opciones">
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                    </div>
+
+                    <div class="fx-info">
+                        <h4>Intro Programa</h4>
+                        <div class="fx-meta">
+                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
+                        </div>
+                    </div>
+
+                    <button class="play"><i class="fa-solid fa-play"></i></button>
+                </div>
+
+                <div class="fx-item">
+                    <span class="fx-etiqueta">Transición</span>
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="menu-opciones">
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                    </div>
+
+                    <div class="fx-info">
+                        <h4>Cortina Musical</h4>
+                        <div class="fx-meta">
+                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:08</span>
+                        </div>
+                    </div>
+
+                    <button class="play"><i class="fa-solid fa-play"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../js/reproducir.js"></script>
+
+</body>
+
+
+
+</html>
