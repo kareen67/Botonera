@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efectos de Sonido (FX)</title>
-    <link rel="stylesheet" href="fx-estilo.css">
+    <link rel="stylesheet" href="../../css/fx-institucionales.css">
+    <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <main class="contenido">
-
-        <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>
-        <p class="subtexto">Gestiona tus efectos personales y accede a la biblioteca institucional</p>
-
+        <div class="descripcion">
+            <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>
+            <p class="subtexto">Gestiona tus efectos personales y accede a la biblioteca institucional</p>
+        </div>
         <section class="fx-section">
             <div class="fx-header">
                 <h3><i class="fa-solid fa-music"></i> Biblioteca de FX</h3>
@@ -33,7 +34,7 @@
             <!-- MIS FX (grid) -->
             <div id="misFx" class="fx-grid">
                 <div class="fx-item">
-                    <span class="categoria intro">Intro</span>
+                    <span class="fx-etiqueta">Intro</span>
                     <div class="fx-info">
                         <h4>Inicio Programa</h4>
                         <div class="fx-meta">
@@ -51,7 +52,7 @@
                 </div>
 
                 <div class="fx-item">
-                    <span class="categoria transicion">Transición</span>
+                    <span class="fx-etiqueta">Transición</span>
                     <div class="fx-info">
                         <h4>Cortina Noticias</h4>
                         <div class="fx-meta">
@@ -72,7 +73,7 @@
             <!-- FX INSTITUCIONALES (tabla) -->
             <div id="institucionales" class="fx-tabla hidden">
                 <table>
-                    <thead>
+                    <thead class="barra">
                         <tr>
                             <th>Nombre</th>
                             <th>Duración</th>
@@ -86,25 +87,29 @@
                         <tr>
                             <td>ID Estación</td>
                             <td>0:05</td>
-                            <td><span class="categoria intro">ID</span></td>
+                            <td><span class="categoria">ID</span></td>
                             <td>id_estacion.mp3</td>
                             <td>Sistema</td>
                             <td class="acciones">
-                                <button class="play"><i class="fa-solid fa-play"></i></button>
-                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
-                                <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                                <button class="play-2"><i class="fa-solid fa-play"></i></button>
+                                <div class="acciones-ss">
+                                    <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td>Cortina Noticias</td>
                             <td>0:10</td>
-                            <td><span class="categoria transicion">Noticias</span></td>
+                            <td><span class="categoria">Noticias</span></td>
                             <td>cortina_noticias.mp3</td>
                             <td>Sistema</td>
                             <td class="acciones">
-                                <button class="play"><i class="fa-solid fa-play"></i></button>
-                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
-                                <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                                <button class="play-2"><i class="fa-solid fa-play"></i></button>
+                                <div class="acciones-ss">
+                                    <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>

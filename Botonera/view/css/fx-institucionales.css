@@ -2,161 +2,361 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
-body {
-  background-color: #f9fafc;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  color: #1e1e1e;
-  padding: 40px 0;
+:root {
+  --violeta-suave: #e6d5ff;
+  --violeta: #713ed1;
+  --violeta-oscuro: #7b2cbf;
+  --fondo: #f9f7ff;
+  --texto: #2d1b3d;
+  --gris: #bcaedb;
+  --blanco: #fff;
+  --sombra: rgba(123, 44, 191, 0.15);
+  --resaltado: #f3ecff;
+  --verde: #00c853;
+
+  --efecto: #b88cc7;
 }
 
-.fx-section {
-  width: 90%;
-  max-width: 1000px;
+.contenido {
+  padding: 40px 80px;
 }
 
-h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.subtitulo {
-  color: #666;
-  margin-top: 5px;
+.descripcion {
+  background: var(--blanco);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--sombra);
+  padding: 25px;
   margin-bottom: 25px;
 }
 
-.fx-container {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  padding: 25px;
+.descripcion p {
+  font-size: 0.9rem;
+  color: #010101;
 }
 
+
+h2 {
+  margin-bottom: 5px;
+  color: var(--violeta-oscuro);
+}
+
+.subtexto {
+  margin-bottom: 20px;
+}
+
+/* === HEADER FX === */
 .fx-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.fx-info h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.fx-info p {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* .fx-buttons {
-  display: flex;
-  gap: 10px;
-  background-color: #22c55e;
-  width: 100%;
-} */
- 
-
-.btn-primario {
-  background-color: #7c3aed;
+button.agregar-fx {
+  background: var(--violeta-oscuro);
   color: white;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 8px 14px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
-.btn-primario:hover {
-  background-color: #6d28d9;
+button.agregar-fx:hover {
+  background: var(--efecto);
 }
 
-.btn-secundario {
-  background-color: #ede9fe;
-  color: #6d28d9;
+/* === TABS === */
+.tabs {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  background-color: var(--texto);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.tab {
+  background: var(--efecto);
+  color: var(--blanco);
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 14px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
+  transition: 0.2s;
 }
 
-.tabla-fx {
+.tab.active {
+  background: var(--resaltado);
+  color: rgb(0, 0, 0);
+}
+
+.tab:hover {
+  background: #fb9090;
+}
+
+/* === FX GRID (botonera) === */
+.fx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.fx-item {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.fx-item:hover {
+  transform: translateY(-4px);
+}
+
+.fx-item h4 {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.fx-meta {
+  font-size: 13px;
+  color: #555;
+}
+
+/* === PLAY BUTTON === */
+.play {
+  background: #88c1ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px auto 0;
+  transition: background 0.2s;
+}
+
+.play:hover {
+  background: #005fcc;
+}
+
+/* === MENU OPCIONES === */
+.menu {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+
+.menu-opciones {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.menu-opciones.show {
+  display: flex;
+}
+
+.menu-opciones button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  width: 100%;
+}
+
+.menu-opciones button:hover {
+  background: #f2f2f2;
+}
+
+/* === TABLA FX INSTITUCIONAL === */
+.fx-tabla {
+  overflow-x: auto;
+}
+
+.fx-tabla table {
   width: 100%;
   border-collapse: collapse;
+  background: var(--fondo);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.fx-tabla th,
+.fx-tabla td {
+  padding: 10px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
-.tabla-fx thead {
-  background-color: #f5f3ff;
-}
+.barra {
+  background-color: var(--violeta-suave);
+  border-radius: 8px;
 
-.tabla-fx th {
-  padding: 12px;
-  color: #555;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.tabla-fx td {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-  font-size: 0.9rem;
-}
-
-.tag {
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.tag-purple {
-  background-color: #7c3aed;
-}
-
-.tag-red {
-  background-color: #ef4444;
-}
-
-.tag-green {
-  background-color: #22c55e;
 }
 
 .acciones {
   display: flex;
-  gap: 8px;
+  justify-content: center;
+  gap: 25px;
+  background-color: #f7f0fc;
+
 }
 
-.btn-icon {
+.acciones-ss {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.acciones-ss .edit {
+  background-color: #005fcc;
+  padding: 8px;
+  border-radius: 20px;
+  transition: all .2s;
+}
+
+.acciones-ss .delete {
+  background-color: #005fcc;
+  padding: 8px;
+  border-radius: 20px;
+  transition: all .2s;
+}
+
+.acciones-ss .edit:hover {
+  background: var(--violeta-oscuro);
+  transform: scale(1.1);
+}
+.acciones-ss .delete:hover {
+  background: var(--violeta-oscuro);
+  transform: scale(1.1);
+}
+
+.acciones button {
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.2s ease;
+  font-size: 16px;
+  color: var(--texto);
+
 }
 
-.btn-icon:hover {
-  transform: scale(1.2);
+.acciones button:hover {
+  color: #f2f2f2;
 }
 
-.play {
-  color: #7c3aed;
+button.play-2 {
+  background-color: var(--violeta);
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  margin-top: 7px;
 }
 
-.edit {
-  color: #6b7280;
+.play-2:hover {
+  background: var(--violeta-oscuro);
+  transform: scale(1.1);
 }
 
-.delete {
-  color: #ef4444;
+/* Play activo */
+.fx-item.reproduciendo .play-2 {
+  background: #1b0e26;
+}
+
+/* === MODAL === */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.categoria {
+    background: var(--violeta);
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: left 10px;
+    border-radius: 20px 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.categoria:hover {
+    padding-left: 15px;
+    box-shadow: 10px 5px 0px #a580e9;
+
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .fx-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .fx-item h4 {
+    font-size: 14px;
+  }
+
+  .agregar-fx {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }
