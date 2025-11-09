@@ -1,20 +1,48 @@
-<!-- Incluye FontAwesome en el <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../../view/css/header.css">
+<!DOCTYPE html>
+<html lang="es">
 
-<header class="app-header">
-    <div class="logo">
-        <img src="img/logo.png" alt="Botoneta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Sonoro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+
+<body>
+    <!-- Mini Top Bar -->
+    <div class="mini-topbar">
+        <div class="socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <span class="contact">+54 9 11 1234-5678</span>
+        </div>
+        <p class="phrase">Conectando cada programa con su mejor sonido!!</p>
     </div>
 
-    <nav class="menu">
-        <a href="#">Administración</a>
-        <a href="#">Mis Programas</a>
-        <a href="#">FX</a>
-    </nav>
+    <!-- Header principal -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="../img/SonarBo.png" alt="">
+            <h1>SonarBo</h1>
+        </div>
 
-    <div class="user-area">
-        <i class="user-area fa-regular fa-user"></i>
-        <button class="user-area exit-btn">Exit</button>
-    </div>
-</header>
+        <nav class="nav-links">
+            <!-- Jefe de operadores -->
+            <!-- <a href="#">Administración</a> -->
+            <a href="#">Mis Programas</a>
+            <a href="#">FX</a>
+        </nav>
+
+        <div class="user-section">
+            <a href="perfil.html" class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <button class="exit-btn">Exit</button>
+        </div>
+    </header>
+
+</body>
+
+</html>

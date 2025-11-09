@@ -1,83 +1,212 @@
-/* --- estilo general del header --- */
-* {
+/* Fuente base */
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background: #f6f5ff;
 }
 
-.app-header {
-    background-color: #d7c3f7;
-    /* violeta claro */
+/* 🌟 Mini Top Bar */
+.mini-topbar {
+    position: sticky;
+    width: 100%;
+    background: #3b1f63;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    transition: top 0.4s ease;
+    z-index: 20;
+    width: auto;
+}
+
+.mini-topbar.visible {
+    top: 0;
+}
+
+.mini-topbar .socials {
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+.mini-topbar .socials a {
+    color: #FFD166;
+    font-size: 1.3rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.mini-topbar .socials a:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
+
+.mini-topbar .contact {
+    margin-left: 10px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.mini-topbar .phrase {
+    color: #FFD166;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+}
+
+/* 🎧 Header principal */
+.topbar {
+    position: sticky;
+    top: 0;
+    display: flex;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
-    font-family: Arial, sans-serif;
+    align-items: center;
+    background: linear-gradient(90deg, #7867c0, #a586fc);
+    padding: 12px 25px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.6s ease;
+    z-index: 10;
+    max-height: 70px;
+    /* no deja que crezca más */
+    overflow: hidden;
+    /* corta el exceso si el logo se pasa */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* background-color: #816ecc; */
+    padding: 10px;
 }
 
 .logo img {
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    /* evita que se mueva al escalar */
+    filter: drop-shadow(5px 5px 10px rgba(221, 183, 13, 0.5));
+    overflow: visible;
 }
 
-/* menú */
-.menu {
+.logo i {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    color: #3b1f63;
+    transition: all .2s;
+    text-shadow: 1.5px 1px 0px #ffd166c3;
+
+}
+
+/* Efectos al pasar el mouse */
+.logo:hover i,
+.logo:hover h1 {
+    transform: scale(1.05);
+    padding-left: 5px;
+}
+
+.logo img:hover {
+    transform: scale(1.4) rotate(5deg);
+}
+
+
+/* Navegación */
+.nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 25px;
 }
 
-.menu a {
-    color: #000;
+.nav-links a {
     text-decoration: none;
-    font-size: 0.95rem;
+    color: #3b1f63;
+    font-weight: 600;
     position: relative;
     transition: color 0.3s ease;
 }
 
-.menu a::after {
+.nav-links a::after {
     content: "";
     position: absolute;
+    bottom: -4px;
+    left: 0;
     width: 0;
     height: 2px;
-    bottom: -3px;
-    left: 0;
-    background-color: #000;
-    transition: width 0.3s;
+    background: #FFD166;
+    transition: width 0.3s ease;
 }
 
-.menu a:hover {
-    color: #4b0082;
+.nav-links a:hover {
+    color: #FFD166;
 }
 
-.menu a:hover::after {
+.nav-links a:hover::after {
     width: 100%;
 }
 
-/* usuario */
-.user-area {
+/* Usuario */
+.user-section {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    gap: 10px;
 }
 
-.user-area:hover {
-    transform: scale(1.09);
+.profile-icon {
+    font-size: 1.3rem;
+    color: #3b1f63;
+    background: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-.user-area i {
-    font-size: 1.4rem;
+.profile-icon:hover {
+    transform: rotate(10deg) scale(1.1);
+    background: #3b1f63;
+    color: #FFD166;
 }
 
 .exit-btn {
-    background-color: white;
+    background: #FFD166;
     border: none;
-    padding: 0.3rem 1rem;
-    border-radius: 1rem;
+    color: #3b1f63;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 10px 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .exit-btn:hover {
-    background-color: #eee;
+    background: #3b1f63;
+    color: #FFD166;
+    transform: scale(1.05);
+}
+
+/* Animación */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
