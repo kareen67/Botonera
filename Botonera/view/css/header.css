@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    background: #f6f5ff;
+    background: #f5f1ff;
 }
 
 /* 🌟 Mini Top Bar */
@@ -91,6 +91,7 @@ body {
     /* evita que se mueva al escalar */
     filter: drop-shadow(5px 5px 10px rgba(221, 183, 13, 0.5));
     overflow: visible;
+    cursor: pointer;
 }
 
 .logo i {
