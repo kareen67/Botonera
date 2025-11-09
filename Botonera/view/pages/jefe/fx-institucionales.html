@@ -7,7 +7,6 @@
     <title>Efectos de Sonido (FX)</title>
     <link rel="stylesheet" href="../../css/fx-institucionales.css">
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
-    <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -28,52 +27,13 @@
 
             <!-- Tabs -->
             <div class="tabs">
-                <button class="tab active" data-target="misFx"><i class="fa-regular fa-user"></i> Mis FX</button>
                 <button class="tab" data-target="institucionales"><i class="fa-solid fa-building"></i> FX
                     Institucionales</button>
             </div>
 
-            <!-- MIS FX (grid) -->
-            <div id="misFx" class="fx-grid">
-                <div class="fx-item">
-                    <span class="fx-etiqueta">Intro</span>
-
-                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    <div class="menu-opciones">
-                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                        <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                    </div>
-
-                    <div class="fx-info">
-                        <h4>Inicio Programa</h4>
-                        <div class="fx-meta">
-                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
-                        </div>
-                    </div>
-                    <button class="play"><i class="fa-solid fa-play"></i></button>
-
-                </div>
-
-                <div class="fx-item">
-                    <span class="fx-etiqueta">Transición</span>
-                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    <div class="menu-opciones">
-                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                        <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                    </div>
-                    <div class="fx-info">
-                        <h4>Cortina Noticias</h4>
-                        <div class="fx-meta">
-                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:10</span>
-                        </div>
-                    </div>
-                    <button class="play"><i class="fa-solid fa-play"></i></button>
-
-                </div>
-            </div>
-
+           
             <!-- FX INSTITUCIONALES (tabla) -->
-            <div id="institucionales" class="fx-tabla hidden">
+            <div id="" class="fx-tabla">
                 <table>
                     <thead class="barra">
                         <tr>
@@ -138,8 +98,6 @@
 
     </main>
 
-    <script src="../../js/opciones.js"></script>
-    <script src="../../js/modal-tabs.js"></script>
     <script>
         // Botón play animado
         document.querySelectorAll('.play').forEach(btn => {
