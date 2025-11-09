@@ -1,0 +1,61 @@
+:root {
+    --violeta-suave: #e6d5ff;
+    --violeta: #713ed1;
+    --violeta-oscuro: #7b2cbf;
+    --fondo: #f9f7ff;
+    --texto: #2d1b3d;
+    --gris: #bcaedb;
+    --blanco: #fff;
+    --sombra: rgba(123, 44, 191, 0.15);
+    --resaltado: #f3ecff;
+    --verde: #00c853;
+}
+/* ===== Menú opciones (3 puntos) ===== */
+.menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--violeta-oscuro);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.menu-opciones {
+    position: absolute;
+    top: 38px;
+    right: 12px;
+    background: var(--blanco);
+    border: 1px solid var(--gris);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px var(--sombra);
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease forwards;
+}
+
+.menu-opciones.activo {
+    display: flex;
+}
+
+.menu-opciones button {
+    background: none;
+    border: none;
+    padding: 15px 15px;
+    font-size: 0.9rem;
+    color: var(--texto);
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: ease 0.3s;
+}
+
+.menu-opciones button:hover {
+    background: var(--texto);
+    color: var(--blanco);
+}

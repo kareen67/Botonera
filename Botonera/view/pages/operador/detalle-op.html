@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FX del Programa - Productor</title>
     <link rel="stylesheet" href="../../css/detalle-fx-op.css" />
+    <link rel="stylesheet" href="../../css/opciones.css">
+    <link rel="stylesheet" href="../../css/modal-agregar.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -34,7 +36,9 @@
         <section class="fx-section">
             <div class="fx-header">
                 <h3><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h3>
-                <button class="agregar-fx"><i class="fa-solid fa-plus"></i> Agregar FX</button>
+                <button id="openModal" class="agregar-fx">
+                    <i class="fa-solid fa-plus"></i> Agregar FX
+                </button>
             </div>
             <p class="subtexto">Gestiona los efectos de sonido del programa</p>
 
@@ -77,9 +81,31 @@
                 </div>
             </div>
         </section>
+
+        <!-- MODAL -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2>Agregar Nuevo FX </h2>
+                <label>Nombre:</label>
+                <input type="text" placeholder="Ej: Disparo Explosivo">
+                <label>Categoría:</label>
+                <input type="text" placeholder="Ej: Acción">
+                <label>Archivo:</label>
+                <input type="file">
+                <div class="modal-buttons">
+                    <button class="btn cancelar" id="closeModal">Cancelar</button>
+                    <button class="btn primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+
     </main>
 
     <script src="../../js/reproducir.js"></script>
+    <script src="../../js/opciones.js"></script>
+    <script src="../../js/modal-tabs.js"></script>
+
 
 </body>
 

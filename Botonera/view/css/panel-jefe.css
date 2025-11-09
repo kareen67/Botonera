@@ -3,11 +3,12 @@
     --fondo-tarjeta: #2a0b3f;
     --violeta: #7b2cbf;
     --violeta-claro: #b892ff;
-    --violeta-neon: #c77dff;
+    --amarillo: #FFD166;
     --texto: #f3e8ff;
     --gris-suave: #b8a9c9;
     --sombra: rgba(100, 50, 150, 0.3);
 }
+
 
 
 * {
@@ -21,8 +22,6 @@ body {
     background: #f5f1ff;
     color: #333;
 }
-
-
 
 /* --- CONTENIDO --- */
 .container {
@@ -71,12 +70,11 @@ h3 {
     background: #0c0614;
     color: #fff;
     font-weight: bold;
-    box-shadow: 0 0 8px #a550f9;
     transform: scale(1.05);
 }
 
 .tab:hover {
-    background: #c4b5fd;
+    background: #FFD166;
     color: #2e1065;
     box-shadow: 2px -1px 0px #f7f5ff;
 
@@ -94,7 +92,8 @@ h3 {
 
 /* --- TARJETAS --- */
 .card {
-    background: #fff;
+    box-shadow: 0 8px 20px rgba(59, 31, 99, 0.3);
+
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     padding: 20px;
@@ -108,6 +107,10 @@ h2 {
     font-size: 1.4rem;
 }
 
+.form-card label {
+    font-weight: 600;
+}
+
 .form-card input,
 .form-card select,
 textarea {
@@ -115,28 +118,47 @@ textarea {
     margin-top: 5px;
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 2px solid #2a0b3f;
     margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
 }
+
+
+
+/* Efecto de latido cuando el input está enfocado */
+input:focus {
+    border-color: #FFD166;
+    box-shadow: 0 0 3px 1px #ffd166d6,
+        0 0 5px 2px rgba(255, 233, 146, 0.664);
+    transition: box-shadow 0.4s ease;
+}
+
 
 textarea {
     resize: none;
     height: 80px;
+
 }
 
 .btn-primary {
-    background: #582e9f;
-    color: #fff;
-    border: none;
+    background: var(--amarillo);
+    color: #3b1f63;
+    font-weight: 600;
+    border: 2px solid var(--fondo);
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
     font-weight: bold;
+    transition: all .3s;
 }
 
 .btn-primary:hover {
-    background: #6b21a8;
+    background: #3b1f63;
+    color: var(--amarillo);
+    transform: scale(1.05);
 }
 
 /* --- LISTAS --- */
@@ -144,10 +166,11 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #eee;
+    border: 1px solid #c1a6df;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: #f5f1ff;
 }
 
 .acciones {
@@ -158,7 +181,8 @@ textarea {
 
 .info {
     display: flex;
-    flex-direction: column; /*coloca el horario arriba de los botones */
+    flex-direction: column;
+    /*coloca el horario arriba de los botones */
     align-items: center;
     text-align: center;
     gap: 6px;
@@ -218,7 +242,8 @@ textarea {
     color: #5b21b6;
     font-size: 0.95rem;
     font-weight: bold;
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    white-space: nowrap;
+    /* Evita que el texto se divida en varias líneas */
     padding: 4px 12px;
     border-radius: 8px;
     margin-bottom: 6px;

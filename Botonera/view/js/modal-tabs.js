@@ -8,16 +8,15 @@ document.getElementById("closeModal").onclick = () => {
 
 // Tabs
 const tabs = document.querySelectorAll('.tab');
-const grids = document.querySelectorAll('.fx-grid');
+const grids = document.querySelectorAll('.fx-grid, .fx-tabla, .fx-inst');
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // quitar active a todas
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        // ocultar todas las grids
-        grids.forEach(grid => grid.classList.add('hidden'));
-        // mostrar la grid correspondiente
-        document.getElementById(tab.dataset.target).classList.remove('hidden');
+if (tabs.length && grids.length) {
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            grids.forEach(grid => grid.classList.add('hidden'));
+            document.getElementById(tab.dataset.target).classList.remove('hidden');
+        });
     });
-});
+}
