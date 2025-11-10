@@ -30,7 +30,7 @@ ini_set('display_errors', 0);
 
 <body>
 
-
+    <div class="musical-background">
         <span>♪</span>
         <span>♫</span>
         <span>♬</span>

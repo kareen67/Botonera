@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2025 a las 02:21:51
+-- Tiempo de generación: 10-11-2025 a las 14:57:13
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `fx` (
   `id_programa` int(11) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `fx`
+--
+
+INSERT INTO `fx` (`id_fx`, `ruta_archivo`, `clasificacion_fx`, `nombre`, `id_programa`, `id_usuario`) VALUES
+(3, 'uploads/fx/pedoo-2.mp3', 'a', 'a', NULL, 8),
+(4, 'uploads/fx/anime-wow-sound-effect.mp3', 'waw', 'waw', NULL, 8);
 
 -- --------------------------------------------------------
 
@@ -74,6 +82,13 @@ CREATE TABLE `programa_radial` (
   `descripcion` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `programa_radial`
+--
+
+INSERT INTO `programa_radial` (`id_programa`, `nombre`, `horario`, `descripcion`) VALUES
+(1, 'nose algo', '12:00 - 11:00', 'prueba');
+
 -- --------------------------------------------------------
 
 --
@@ -85,7 +100,7 @@ CREATE TABLE `usuario` (
   `nombre` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `rol` enum('productor','operador','jefeOp') NOT NULL
+  `rol` enum('productor','operador','jefe') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -93,9 +108,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `email`, `password`, `rol`) VALUES
-(2, 'antu', 'antu@gmail.com', '$2y$10$dcxfIQTybTyjov6kk9jTTuFh3crLtBa8cb/c0fxxgAtUs3.n.3KnG', 'operador'),
-(3, 'antu2', 'antu2@gmail.com', '$2y$10$TwtEWfkgbWGgTGt9ZowVeO6uK73FDHYZunjNTV2kaTZWN27GTBvxq', 'productor'),
-(5, 'antu3', 'antu3@gmail.com', '$2y$10$g04UNYECRQi74b8RyVgQZ.WymHq8FCMYEU51YeiCnRerZByCMC7sy', 'jefeOp');
+(6, 'antu nahuel', 'antunahuel@gmail.com', '$2y$10$7W7fWjmOc5XYY/ssmUhHXecmVJRrob0hx6rLhz8LppuQOOd/iiU3a', 'jefe'),
+(7, 'antu paladea', 'antupaladea@gmail.com', '$2y$10$HeRmgiBb7bqV/uo3ukLCS.uOivoLsOAI31NXKwzZk37u7ke9vIwm2', 'productor'),
+(8, 'antu torres', 'antutorres@gmail.com', '$2y$10$OaefLqI9.bVMmb1uht8Fgup0OyA6qaKwOZdhd8gtXbOwSgl542ZYS', 'operador');
 
 --
 -- Índices para tablas volcadas
@@ -146,7 +161,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `fx`
 --
 ALTER TABLE `fx`
-  MODIFY `id_fx` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_fx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `operador_programa`
@@ -164,13 +179,13 @@ ALTER TABLE `productor_programa`
 -- AUTO_INCREMENT de la tabla `programa_radial`
 --
 ALTER TABLE `programa_radial`
-  MODIFY `id_programa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_programa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
