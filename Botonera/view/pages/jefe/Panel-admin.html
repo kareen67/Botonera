@@ -7,6 +7,7 @@
     <title>Panel de Administración principal</title>
     <link rel="stylesheet" href="../../css/panel-jefe.css">
     <link rel="stylesheet" href="../../css/header.css">
+
     <link rel="stylesheet" href="../../css/fondo-musical.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -14,9 +15,24 @@
 </head>
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
+
     <div class="container">
         <h1>Panel de Administración</h1>
-        <p>Gestiona usuarios, programas y asignaciones del sistema</p>
+        <p class="pr">Gestiona usuarios, programas y asignaciones del sistema</p>
 
         <div class="tabs">
             <button class="tab active" data-target="usuarios"><i class="fa-regular fa-user"></i> Usuarios</button>
@@ -195,45 +211,95 @@
         </section>
     </div>
 
-    <script>
-        const tabs = document.querySelectorAll('.tab');
-        const sections = document.querySelectorAll('.panel-section');
+    <!-- MODALES USUARIOS -->
+    <div id="modalEditarUsuario" class="modal">
+        <div class="modal-box">
+            <span class="cerrar">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form>
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre actual">
+                <label>Email</label>
+                <input type="email" placeholder="usuario@ejemplo.com">
+                <label>Rol</label>
+                <select>
+                    <option>Operador</option>
+                    <option>Productor</option>
+                    <option>Jefe de operadores</option>
+                </select>
+                <button class="btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                sections.forEach(s => s.classList.add('hidden'));
-                tab.classList.add('active');
-                document.getElementById(tab.dataset.target).classList.remove('hidden');
-            });
-        });
-    </script>
+    <div id="modalEliminarUsuario" class="modal">
+        <div class="modal-box">
+            <span class="cerrar">&times;</span>
+            <h2>Eliminar Usuario</h2>
+            <p>¿Seguro que deseas eliminar este usuario?</p>
+            <button class="btn-danger">Eliminar</button>
+        </div>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const botones = document.querySelectorAll('.menu-btn');
+    <!-- MODALES PROGRAMAS -->
+    <div id="modalEditarPrograma" class="modal">
+        <div class="modal-box">
+            <span class="cerrar">&times;</span>
+            <h2>Editar Programa</h2>
+            <form>
+                <label>Nombre del programa</label>
+                <input type="text" placeholder="Nombre actual">
+                <label>Horario</label>
+                <input type="text" placeholder="08:00 - 10:00">
+                <label>Descripción</label>
+                <textarea placeholder="Descripción actual"></textarea>
+                <button class="btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
 
-            botones.forEach(boton => {
-                boton.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Evita que el clic cierre el menú
-                    const acciones = boton.closest('.acciones');
-                    const activo = acciones.classList.contains('activo');
+    <div id="modalEliminarPrograma" class="modal">
+        <div class="modal-box">
+            <span class="cerrar">&times;</span>
+            <h2>Eliminar Programa</h2>
+            <p>¿Seguro que deseas eliminar este programa?</p>
+            <button class="btn-danger">Eliminar</button>
+        </div>
+    </div>
 
-                    // Cierra todos los demás
-                    document.querySelectorAll('.acciones').forEach(a => a.classList.remove('activo'));
+    <!-- MODALES ASIGNACIONES -->
+    <div id="modalEditarAsignacion" class="modal">
+        <div class="modal-box">
+            <span class="cerrar">&times;</span>
+            <h2>Editar Asignación</h2>
+            <form>
+                <label>Programa</label>
+                <select>
+                    <option>Mañanas en Vivo</option>
+                </select>
+                <label>Operador</label>
+                <select>
+                    <option>Ana Rodríguez</option>
+                </select>
+                <label>Productor</label>
+                <select>
+                    <option>Luis García</option>
+                </select>
+                <button class="btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
 
-                    // Alterna el actual
-                    if (!activo) acciones.classList.add('activo');
-                });
-            });
+    <div id="modalEliminarAsignacion" class="modal">
+        <div class="modal-box">
+            <span class="cerrar">&times;</span>
+            <h2>Eliminar Asignación</h2>
+            <p>¿Seguro que deseas eliminar esta asignación?</p>
+            <button class="btn-danger">Eliminar</button>
+        </div>
+    </div>
 
-            // Cierra si se hace clic fuera
-            document.addEventListener('click', () => {
-                document.querySelectorAll('.acciones').forEach(a => a.classList.remove('activo'));
-            });
-        });
-    </script>
-
+    <script src="../../js/panel-admin.js"></script>
 
 
 </body>

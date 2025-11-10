@@ -1,4 +1,3 @@
-
 :root {
     --fondo: #1a0826;
     --fondo-tarjeta: #2a0b3f;
@@ -10,6 +9,32 @@
     --sombra: rgba(100, 50, 150, 0.3);
 }
 
+:root {
+    /* 🎨 Colores principales */
+    --violet-dark: #522A6F;
+    --violet-light: #DDAAFF;
+    --pink-soft: #F29CB7;
+    --gold-accent: #FBCF4F;
+    --cream: #FAEADD;
+    --dark-base: #222023;
+
+    /* ✨ Degradados */
+    --gradient-main: linear-gradient(135deg, #522A6F, #DDAAFF);
+    --gradient-soft: linear-gradient(120deg, #F29CB7, #FBCF4F);
+    --gradient-dark: linear-gradient(160deg, #222023, #522A6F);
+
+    /* 🧁 Colores de fondo */
+    --background-light: #FAEADD;
+    --background-dark: #222023;
+
+    /* 🩶 Texto */
+    --text-dark: #222023;
+    --text-light: #FAEADD;
+
+    /* 🟡 Sombra y brillo */
+    --shadow: 0 4px 12px rgba(34, 32, 35, 0.25);
+    --glow: 0 0 15px rgba(250, 234, 221, 0.6);
+}
 
 
 * {
@@ -19,10 +44,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* body {
-    background: #f5f1ff;
-    color: #333;
-} */
 
 /* --- CONTENIDO --- */
 .container {
@@ -31,14 +52,20 @@
     padding: 10px;
 }
 
-h1 {
+.container h1 {
+    color: var(--violet-light);
     font-size: 1.8rem;
+    text-shadow: 0 0 10px #DDAAFF;
+
+}
+
+.pr {
+    color: var(--text-light);
 }
 
 p {
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #363636;
     font-size: 16px;
 }
 
@@ -50,7 +77,7 @@ h3 {
     display: flex;
     gap: 10px;
     margin: 20px 0;
-    background-color: #2e1065;
+    background-color: #7b2cbf;
     padding: 10px;
     border-radius: 8px;
 }
@@ -94,7 +121,7 @@ h3 {
 /* --- TARJETAS --- */
 .card {
     box-shadow: 0 8px 20px rgba(59, 31, 99, 0.3);
-
+    background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     padding: 20px;
@@ -163,73 +190,80 @@ textarea {
 
 
 .usuario {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #c1a6df;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f5f1ff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #c1a6df;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f1ff;
 }
 
 .acciones {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .menu-btn {
-  background: none;
-  border: none;
-  color: #522A6F;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 5px;
+    background: none;
+    border: none;
+    color: #522A6F;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .menu-opciones {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 30px;
-  right: 0;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  z-index: 999;
-  animation: fadeIn 0.2s ease-out;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 999;
+    animation: fadeIn 0.2s ease-out;
 }
 
 .menu-opciones button {
-  background: none;
-  border: none;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #2e1065;
-  cursor: pointer;
-  font-size: 0.9rem;
-  width: 100%;
-  text-align: left;
-  transition: background 0.2s ease;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2e1065;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s ease;
 }
 
 .menu-opciones button:hover {
-  background: #f1e5ff;
+    background: #f1e5ff;
 }
 
 .acciones.activo .menu-opciones {
-  display: flex;
+    display: flex;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -279,4 +313,119 @@ textarea {
     color: #fff;
     box-shadow: 0 0 6px #7c3aed;
     transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
+}
+
+/* === ESTILOS BASE DEL MODAL === */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-box h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: #7b2cbf;
+    text-align: center;
+}
+
+/* === FORMULARIO DENTRO DEL MODAL === */
+.modal-box form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.modal-box label {
+    font-weight: 600;
+    color: #000000;
+    text-align: left;
+}
+
+.modal-box input,
+.modal-box select,
+.modal-box textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #b892ff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-box input:focus,
+.modal-box select:focus,
+.modal-box textarea:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 6px rgba(95, 28, 167, 0.3);
+}
+
+/* === BOTONES === */
+
+.btn-danger {
+    background-color: #000000;
+    color: #FFD166;
+    border: none;
+    font-size: 0.95rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.modal-box p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 500px) {
+    .modal-box {
+        padding: 20px;
+    }
+
+    .modal-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-box input,
+    .modal-box select,
+    .modal-box textarea {
+        font-size: 0.9rem;
+    }
 }
