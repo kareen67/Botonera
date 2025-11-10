@@ -1,0 +1,90 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root{
+      --gradient-softt: linear-gradient(120deg, #f3f0fc, #c4a7fc);
+}
+
+/* Contenedor central */
+.bienvenida .contenedor {
+    text-align: center;
+    background: var(--gradient-softt);
+    padding: 40px 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 8px 8px 0px rgba(205, 119, 255, 0.76);
+    animation: aparecer 1.2s ease;
+
+}
+
+/* Título y texto */
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h1 i {
+    margin-right: 8px;
+    color: #522A6F;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #1e123d;
+}
+
+/* Botón principal */
+button {
+    background: #522A6F;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(118, 37, 247, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button.ingresarr a{
+    text-decoration: none;
+    color: azure;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .bienvenida .contenedor {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+}
