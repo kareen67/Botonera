@@ -1,10 +1,10 @@
-<!-- <?php
+<?php
 session_start();
 if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     header("Location: ../../login.php");
     exit();
 }
-?> -->
+?>
 
 
 <!DOCTYPE html>
@@ -34,25 +34,25 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
         <section id="usuarios" class="panel-section">
 
             <div class="card form-card">
-                <form action="" method="post">
+                <form action="../../../model/guardarUsuario.php" method="post">
                     <h2>+ Crear Usuario</h2>
                     <p>Agregar un nuevo usuario al sistema</p>
                     <label>Nombre</label>
-                    <input type="text" placeholder="Nombre completo">
+                    <input name="nombre" type="text" placeholder="Nombre completo" required>
 
                     <label>Email</label>
-                    <input type="email" placeholder="email@ejemplo.com">
+                    <input name="email" type="email" placeholder="email@ejemplo.com" required>
 
                     <label>Contraseña</label>
-                    <input type="password" placeholder="Contraseña segura">
+                    <input name="password" type="password" placeholder="Contraseña segura" required>
 
                     <label>Rol</label>
-                    <select>
-                        <option>Operador</option>
-                        <option>Productor</option>
-                        <option>Jefe de operadores</option>
+                    <select name="rol" required>
+                        <option value="operador" >Operador</option>
+                        <option value="productor" >Productor</option>
+                        <option value="jefe" >Jefe de operadores</option>
                     </select>
-                    <input type="submit" value="Crear Usuario" class="btn-primary">
+                    <input type="submit" name="crear_usuario" value="Crear Usuario" class="btn-primary">
                 </form>
             </div>
 
@@ -90,15 +90,17 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
         <!-- SECCIÓN PROGRAMAS -->
         <section id="programas" class="panel-section hidden">
             <div class="card form-card">
+                <form action="../../../model/guardarPrograma.php" method="post">
                 <h2>+ Crear Programa</h2>
                 <p>Agregar un nuevo programa al sistema</p>
                 <label>Nombre del programa</label>
-                <input type="text" placeholder="Ej: Mañanas en Vivo">
+                <input name="nombre" type="text" placeholder="Ej: Mañanas en Vivo" required>
                 <label>Horario</label>
-                <input type="text" placeholder="Ej: 08:00 - 10:00">
+                <input name="horario" type="text" placeholder="Ej: 08:00 - 10:00" required>
                 <label>Descripción</label>
-                <textarea placeholder="Descripción del programa"></textarea>
-                <button class="btn-primary">Crear Programa</button>
+                <textarea name="descripcion" placeholder="Descripción del programa" required></textarea>
+                <input name="crear_programa" class="btn-primary" type="submit" value="Crear Programa">
+                </form>
             </div>
 
             <div class="card">
