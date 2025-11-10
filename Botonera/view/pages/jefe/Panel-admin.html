@@ -1,3 +1,12 @@
+<!-- <?php
+session_start();
+if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
+    header("Location: ../../login.php");
+    exit();
+}
+?> -->
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,6 +40,9 @@
 
                 <label>Email</label>
                 <input type="email" placeholder="email@ejemplo.com">
+
+                <label>Contraseña</label>
+                <input type="password" placeholder="Contraseña segura">
 
                 <label>Rol</label>
                 <select>

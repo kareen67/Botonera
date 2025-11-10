@@ -15,10 +15,28 @@ if (!empty($_POST["ingresar"])) {
         $resultado = $stmt->get_result();
 
         if ($usuario = $resultado->fetch_object()) {
-            // Verifica la contraseña ingresada contra la hasheada
+            // Verifica la contraseña
             if (password_verify($password, $usuario->password)) {
+                // Guarda los datos en sesión
                 $_SESSION["usuario"] = $usuario->email;
-                header("Location: ../index.html");
+                $_SESSION["rol"] = $usuario->rol; // <-- asegurate que tu tabla tenga este campo
+
+                // Redirección según rol
+                switch ($usuario->rol) {
+                    case 'jefe':
+                        header("Location: ../view/pages/jefe/Panel-admin.html");
+                        break;
+                    case 'operador':
+                        header("Location: ../view/pages/operador/panel-operador.html");
+                        break;
+                    case 'productor':
+                        header("Location: ../view/pages/productor/panel-productor.html");
+                        break;
+                    default:
+                        // Si el rol no coincide con ninguno
+                        header("Location: ../index.html");
+                        break;
+                }
                 exit();
             } else {
                 echo 'Error en Usuario y/o Contraseña';
