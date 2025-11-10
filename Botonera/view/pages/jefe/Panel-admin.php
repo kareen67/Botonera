@@ -15,14 +15,30 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración principal</title>
     <link rel="stylesheet" href="../../css/panel-jefe.css">
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="../../js/reproducir.js"></script>
 </head>
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
     <div class="container">
         <h1>Panel de Administración</h1>
-        <p>Gestiona usuarios, programas y asignaciones del sistema</p>
+        <p class="pr">Gestiona usuarios, programas y asignaciones del sistema</p>
 
         <div class="tabs">
             <button class="tab active" data-target="usuarios"><i class="fa-regular fa-user"></i> Usuarios</button>
@@ -61,6 +77,37 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                 <h2>Usuarios Existentes</h2>
                 <p>Lista de usuarios registrados</p>
 
+                <?php
+                include_once("../../../controller/conexionBD.php");
+
+                // Consulta de todos los usuarios registrados
+                $query = "SELECT id_usuario, nombre, email, rol FROM usuario ORDER BY rol, nombre";
+                $result = $Ruta->query($query);
+
+                if ($result && $result->num_rows > 0):
+                    while ($usuario = $result->fetch_assoc()):
+                        $nombreCompleto = htmlspecialchars($usuario["nombre"]);
+                        $email = htmlspecialchars($usuario["email"]);
+                        $rol = htmlspecialchars($usuario["rol"]);
+                ?>
+                    <div class="usuario">
+                        <div>
+                            <h3><?= $nombreCompleto ?></h3>
+                            <p><?= $email ?></p>
+                        </div>
+                        <div class="acciones">
+                            <!-- Botones opcionales -->
+                            <button class="edit" data-id="<?= $usuario['id_usuario'] ?>"><i class="fa-solid fa-pen"></i></button>
+                            <button class="delete" data-id="<?= $usuario['id_usuario'] ?>"><i class="fa-solid fa-trash"></i></button>
+                            <span class="rol <?= strtolower($rol) ?>"><?= ucfirst($rol) ?></span>
+                        </div>
+                    </div>
+                <?php
+                    endwhile;
+                else:
+                    echo "<p>No hay usuarios registrados.</p>";
+                endif;
+                ?>
                 <div class="usuario">
                     <div>
                         <h3>Ana Rodríguez</h3>
@@ -173,6 +220,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             </div>
         </section>
     </div>
+    <script src="../../js/panel-admin.js"></script>
 
     <script>
         const tabs = document.querySelectorAll('.tab');
