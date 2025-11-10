@@ -20,6 +20,33 @@
   --efecto: #b88cc7;
 }
 
+:root {
+  /* 🎨 Colores principales */
+  --violet-dark: #522A6F;
+  --violet-light: #DDAAFF;
+  --pink-soft: #F29CB7;
+  --gold-accent: #FBCF4F;
+  --cream: #FAEADD;
+  --dark-base: #222023;
+
+  /* ✨ Degradados */
+  --gradient-main: linear-gradient(135deg, #522A6F, #DDAAFF);
+  --gradient-soft: linear-gradient(120deg, #F29CB7, #FBCF4F);
+  --gradient-dark: linear-gradient(160deg, #222023, #522A6F);
+
+  /* 🧁 Colores de fondo */
+  --background-light: #FAEADD;
+  --background-dark: #222023;
+
+  /* 🩶 Texto */
+  --text-dark: #222023;
+  --text-light: #FAEADD;
+
+  /* 🟡 Sombra y brillo */
+  --shadow: 0 4px 12px rgba(34, 32, 35, 0.25);
+  --glow: 0 0 15px rgba(250, 234, 221, 0.6);
+}
+
 .contenido {
   padding: 40px 80px;
 }
@@ -27,13 +54,14 @@
 .descripcion {
   background: var(--blanco);
   border-radius: 10px;
-  box-shadow: 0 2px 8px var(--sombra);
+  border-bottom: 3px solid #a580e9 ;
+  box-shadow: 0 2px 8px #713ed1;
   padding: 25px;
   margin-bottom: 25px;
 }
 
 .descripcion p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #010101;
 }
 
@@ -56,11 +84,11 @@ h2 {
 }
 
 button.agregar-fx {
-  background: var(--violeta-oscuro);
-  color: white;
-  border: none;
+  background: #3b1f63;
+  color: #FBCF4F;
+  border: 2px solid #b88cc7;
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   transition: 0.2s;
@@ -82,7 +110,8 @@ button.agregar-fx:hover {
 
 .tab {
   background: var(--efecto);
-  color: var(--blanco);
+  color: var(--violet-dark);
+  font-weight: 600;
   border: none;
   padding: 14px 12px;
   border-radius: 6px;
@@ -91,12 +120,15 @@ button.agregar-fx:hover {
 }
 
 .tab.active {
-  background: var(--resaltado);
+  background: var(--gold-accent);
   color: rgb(0, 0, 0);
+  
 }
 
 .tab:hover {
-  background: #fb9090;
+  background: #f3ecff;
+  transform: scale(1.1);
+  
 }
 
 /* === FX GRID (botonera) === */
@@ -153,35 +185,35 @@ button.agregar-fx:hover {
 
 /* === GRID FX INSTITUCIONAL === */
 
-  .fx-inst {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-  }
+.fx-inst {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
 
-  .fx-item {
-    position: relative;
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
+.fx-item {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
 
-  .fx-item:hover {
-    transform: translateY(-4px);
-  }
+.fx-item:hover {
+  transform: translateY(-4px);
+}
 
-  .fx-item h4 {
-    font-size: 16px;
-    margin: 8px 0;
-  }
+.fx-item h4 {
+  font-size: 16px;
+  margin: 8px 0;
+}
 
-  .fx-meta {
-    font-size: 13px;
-    color: #555;
-  }
+.fx-meta {
+  font-size: 13px;
+  color: #555;
+}
 
 
 /* === TABLA FX INSTITUCIONAL === */
@@ -226,14 +258,14 @@ button.agregar-fx:hover {
 }
 
 .acciones-ss .edit {
-  background-color: #005fcc;
+  background-color: #a580e9;
   padding: 8px;
   border-radius: 20px;
   transition: all .2s;
 }
 
 .acciones-ss .delete {
-  background-color: #005fcc;
+  background-color: #F29CB7;
   padding: 8px;
   border-radius: 20px;
   transition: all .2s;
@@ -263,7 +295,7 @@ button.agregar-fx:hover {
 }
 
 button.play-2 {
-  background-color: var(--violeta);
+  background-color: var(--violeta-oscuro);
   width: 60px;
   height: 60px;
   border-radius: 20px;
@@ -272,7 +304,7 @@ button.play-2 {
 }
 
 .play-2:hover {
-  background: var(--violeta-oscuro);
+  background: var(--dark-base);
   transform: scale(1.1);
 }
 

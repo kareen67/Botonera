@@ -18,13 +18,30 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
-    <!-- <link rel="stylesheet" href="../../css/fondo-musical.css"> -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
 
     <main class="contenido">
+        <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
+
         <div class="descripcion">
             <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>
             <p class="subtexto">Reproduce la biblioteca institucional</p>
@@ -60,26 +77,18 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
                         </div>
                     </div>
                     <button class="play"><i class="fa-solid fa-play"></i></button>
-
                 </div>
+
             </div>
+
         </section>
 
     </main>
-    
+
     <script src="../../js/opciones.js"></script>
     <script src="../../js/modal-tabs.js"></script>
-    <script>
-        // Botón play animado
-        document.querySelectorAll('.play').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.classList.toggle('playing');
-                btn.innerHTML = btn.classList.contains('playing')
-                    ? '<i class="fa-solid fa-pause"></i>'
-                    : '<i class="fa-solid fa-play"></i>';
-            });
-        });
-    </script>
+    <script src="../../js/reproducir.js"></script>
+
 </body>
 
 </html>

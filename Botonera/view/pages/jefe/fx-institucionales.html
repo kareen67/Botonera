@@ -17,10 +17,27 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <link rel="stylesheet" href="../../css/fx-institucionales.css">
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
+
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
     <main class="contenido">
         <div class="descripcion">
             <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>
@@ -40,7 +57,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                     Institucionales</button>
             </div>
 
-           
+
             <!-- FX INSTITUCIONALES (tabla) -->
             <div id="" class="fx-tabla">
                 <table>
@@ -107,6 +124,23 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
 
     </main>
 
+    <!-- MODAL: AGREGAR FX -->
+    <div id="modalAgregar" class="modal">
+        <div class="modal-content">
+            <h2>Agregar Nuevo FX institucional</h2>
+            <label>Nombre:</label>
+            <input type="text" placeholder="Ej: Disparo Explosivo">
+            <label>Categoría:</label>
+            <input type="text" placeholder="Ej: Acción">
+            <label>Archivo:</label>
+            <input type="file">
+            <div class="modal-buttons">
+                <button class="btn cancelar">Cancelar</button>
+                <button class="btn primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Botón play animado
         document.querySelectorAll('.play').forEach(btn => {
@@ -118,6 +152,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             });
         });
     </script>
+    <script src="../../js/biblioteca.js"></script>
 </body>
 
 </html>

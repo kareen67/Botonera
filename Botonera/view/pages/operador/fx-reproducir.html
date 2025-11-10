@@ -19,11 +19,28 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
+
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <!-- <link rel="stylesheet" href="../../css/fondo-musical.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
 
     <main class="contenido">
         <div class="descripcion">
@@ -111,10 +128,10 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             </div>
         </section>
 
-        <!-- MODAL -->
-        <div id="modal" class="modal">
+        <!-- MODAL: AGREGAR FX -->
+        <div id="modalAgregar" class="modal">
             <div class="modal-content">
-                <h2>Agregar Nuevo FX Personal </h2>
+                <h2>Agregar Nuevo FX Personal</h2>
                 <label>Nombre:</label>
                 <input type="text" placeholder="Ej: Disparo Explosivo">
                 <label>Categoría:</label>
@@ -122,26 +139,47 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                 <label>Archivo:</label>
                 <input type="file">
                 <div class="modal-buttons">
-                    <button class="btn cancelar" id="closeModal">Cancelar</button>
+                    <button class="btn cancelar">Cancelar</button>
                     <button class="btn primary">Guardar</button>
                 </div>
             </div>
         </div>
 
+        <!-- MODAL: EDITAR FX -->
+        <div id="modalEditar" class="modal">
+            <div class="modal-content">
+                <h2>Editar FX</h2>
+                <label>Nuevo nombre:</label>
+                <input type="text" placeholder="Ej: Cortina Noticias">
+                <label>Categoría:</label>
+                <input type="text" placeholder="Ej: Informativo">
+                <label>Archivo nuevo (opcional):</label>
+                <input type="file">
+                <div class="modal-buttons">
+                    <button class="btn cancelar">Cancelar</button>
+                    <button class="btn primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: CONFIRMAR ELIMINACIÓN -->
+        <div id="modalEliminar" class="modal">
+            <div class="modal-content">
+                <h2>Eliminar FX</h2>
+                <p>¿Seguro que querés eliminar este FX? Esta acción no se puede deshacer.</p>
+                <div class="modal-buttons">
+                    <button class="btn cancelar">Cancelar</button>
+                    <button class="btn primary eliminar">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+
     </main>
-    <script src="../../js/opciones.js"></script>
+    <!-- <script src="../../js/opciones.js"></script> -->
     <script src="../../js/modal-tabs.js"></script>
-    <script>
-        // Botón play animado
-        document.querySelectorAll('.play').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.classList.toggle('playing');
-                btn.innerHTML = btn.classList.contains('playing')
-                    ? '<i class="fa-solid fa-pause"></i>'
-                    : '<i class="fa-solid fa-play"></i>';
-            });
-        });
-    </script>
+    <script src="../../js/reproducir.js"></script>
+    <script src="../../js/biblioteca.js"></script>
 </body>
 
 </html>

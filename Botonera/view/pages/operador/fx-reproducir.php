@@ -21,12 +21,29 @@ ini_set('display_errors', 0);
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
+
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <!-- <link rel="stylesheet" href="../../css/fondo-musical.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
     <main class="contenido">
         <div class="descripcion">
             <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>

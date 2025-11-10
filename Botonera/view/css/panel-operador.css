@@ -6,7 +6,7 @@
     --violeta-claro: #b892ff;
     --violeta-neon: #c77dff;
     --texto: #f3e8ff;
-    --gris-suave: #b8a9c9;
+    --gris-suave: #a498b1;
     --sombra: rgba(100, 50, 150, 0.3);
 }
 
@@ -54,7 +54,6 @@
     min-height: 100vh;
     color: var(--texto);
     padding-top: 50px;
-    /* background: linear-gradient(180deg, var(--fondo) 0%, #210a2f 100%); */
 }
 
 /* --- CONTENIDO --- */
@@ -74,7 +73,7 @@
 
 .titulo h1 {
     font-size: 2rem;
-    color: var(--violet-dark);
+    color: var(--violet-light);
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -84,12 +83,12 @@
 }
 
 .titulo h1 i {
-    color: var(--pink-soft);
+    color: var(--gold-accent);
 }
 
 .subtitulo {
     font-size: 1rem;
-    color: var(--gris-suave);
+    color: var(--cream);
 }
 
 /* ===== TARJETAS ===== */
@@ -120,7 +119,7 @@
     padding: 20px;
     border-radius: 14px;
     box-shadow: 0 0 15px var(--sombra);
-    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform .2s ease, box-shadow 0.3s ease, background 0.3s ease;
     opacity: 0;
     animation: fade-slide-in 0.8s ease forwards;
     display: flex;
@@ -128,7 +127,7 @@
     justify-content: space-between;
     border: 1px solid rgba(255, 255, 255, 0.05);
     height: auto;
-    transition: transform 0.3s;
+
 }
 
 /* Efecto escalonado */
@@ -146,8 +145,7 @@
 
 .tarjeta:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(199, 125, 255, 0.4);
-    /* background: linear-gradient(145deg, #2d0f44, #902ddb); */
+    box-shadow: 0 0 25px rgba(204, 137, 255, 0.647);
 }
 
 /* ===== CONTENIDO TARJETA ===== */
@@ -160,12 +158,13 @@
 
 .header-tarjeta h2 {
     font-size: 1.3rem;
-    color: var(--violeta-neon);
+    color: var(--violeta);
 }
 
 .rol {
-    background: var(--violeta);
-    color: #fff;
+    background: var(--gold-accent);
+    color: #522A6F;
+    font-weight: 600;
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -177,7 +176,7 @@
 
 .descripcion {
     font-size: 0.95rem;
-    color: var(--gris-suave);
+    color: var(--background-dark);
     margin-bottom: 12px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -202,8 +201,8 @@
 /* ===== BOTÓN ===== */
 .btn {
     width: 100%;
-    background: var(--violeta-neon);
-    color: #fff;
+    background: #2a0b3f;
+    color: #FBCF4F;
     border: none;
     border-radius: 10px;
     padding: 10px 0;
@@ -215,7 +214,10 @@
 }
 
 .btn:hover {
-    background: var(--violeta);
+    background: #f5f1ff;
+    border: 2px solid #522A6F;
+    color: #2a0b3f;
     box-shadow: 0 0 20px rgba(199, 125, 255, 0.6);
     transform: scale(1.03);
+    padding-left: 15px;
 }
