@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // === MODALES ===
     const modalAgregar = document.getElementById("modalAgregar");
+    const modalAgregar2 = document.getElementById("modalAgregar");
     const modalEditar = document.getElementById("modalEditar");
     const modalEliminar = document.getElementById("modalEliminar");
 
@@ -53,6 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
     openModalBtn.addEventListener("click", () => {
         modalAgregar.querySelector("h2").textContent = "Agregar Nuevo FX Personal";
         modalAgregar.style.display = "flex";
+    });
+
+
+      // Abrir modal de AGREGAR (solo FX personal)
+    openModalBtn.addEventListener("click", () => {
+        modalAgregar2.querySelector("h2").textContent = "Agregar Nuevo FX Institucional";
+        modalAgregar2.style.display = "flex";
     });
 
     // Cerrar botones genéricos de los modales

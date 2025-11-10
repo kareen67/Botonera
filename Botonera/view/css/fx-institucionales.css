@@ -258,14 +258,14 @@ button.agregar-fx:hover {
 }
 
 .acciones-ss .edit {
-  background-color: #005fcc;
+  background-color: #a580e9;
   padding: 8px;
   border-radius: 20px;
   transition: all .2s;
 }
 
 .acciones-ss .delete {
-  background-color: #005fcc;
+  background-color: #F29CB7;
   padding: 8px;
   border-radius: 20px;
   transition: all .2s;
@@ -295,7 +295,7 @@ button.agregar-fx:hover {
 }
 
 button.play-2 {
-  background-color: var(--violeta);
+  background-color: var(--violeta-oscuro);
   width: 60px;
   height: 60px;
   border-radius: 20px;
