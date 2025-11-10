@@ -96,10 +96,15 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                             <p><?= $email ?></p>
                         </div>
                         <div class="acciones">
-                            <!-- Botones opcionales -->
-                            <button class="edit" data-id="<?= $usuario['id_usuario'] ?>"><i class="fa-solid fa-pen"></i></button>
-                            <button class="delete" data-id="<?= $usuario['id_usuario'] ?>"><i class="fa-solid fa-trash"></i></button>
                             <span class="rol <?= strtolower($rol) ?>"><?= ucfirst($rol) ?></span>
+                            <!-- Botones opcionales -->
+                            <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+
+                            <div class="menu-opciones">
+                                <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                                <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                            </div>
+                            
                         </div>
                     </div>
                 <?php
@@ -153,6 +158,42 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             <div class="card">
                 <h2>Programas Existentes</h2>
                 <p>Lista de programas registrados</p>
+                <?php
+                    include_once("../../../controller/conexionBD.php");
+
+                    // Consultar todos los programas
+                    $query = "SELECT id_programa, nombre, horario, descripcion FROM programa_radial ORDER BY nombre ASC";
+                    $result = $Ruta->query($query);
+
+                    if ($result && $result->num_rows > 0):
+                        while ($programa = $result->fetch_assoc()):
+                            $id = $programa["id_programa"];
+                            $nombre = htmlspecialchars($programa["nombre"]);
+                            $horario = htmlspecialchars($programa["horario"]);
+                            $descripcion = htmlspecialchars($programa["descripcion"]);
+                    ?>
+                        <div class="usuario">
+                            <div>
+                                <h3><?= $nombre ?></h3>
+                                <p><?= $descripcion ?></p>
+                            </div>
+                            <div class="info">
+                                <span class="horario"><?= $horario ?></span>
+                            </div>
+                            <div class="acciones">
+                                <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                <div class="menu-opciones">
+                                    <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                                    <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                        endwhile;
+                    else:
+                        echo "<p>No hay programas registrados.</p>";
+                    endif;
+                    ?>
 
                 <div class="usuario">
                     <div>
@@ -188,19 +229,67 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
         <!-- SECCIÓN ASIGNACIONES -->
         <section id="asignaciones" class="panel-section hidden">
             <div class="card form-card">
+                <form action="../../../model/guardarAsignacion.php" method="post">
                 <h2>+ Nueva Asignación</h2>
                 <p>Asignar un operador a un programa</p>
+                <?php
+                include_once("../../../controller/conexionBD.php");
+                ?>
+
                 <label>Programa</label>
-                <select>
-                    <option>Mañanas en Vivo</option>
-                    <option>Tarde Musical</option>
+                <select name="programa" id="programa" required>
+                    <option value="">Seleccione un programa...</option>
+                    <?php
+                    $queryProgramas = "SELECT id_programa, nombre FROM programa_radial ORDER BY nombre ASC";
+                    $resultProgramas = $Ruta->query($queryProgramas);
+
+                    if ($resultProgramas && $resultProgramas->num_rows > 0) {
+                        while ($row = $resultProgramas->fetch_assoc()) {
+                            echo "<option value='{$row['id_programa']}'>{$row['nombre']}</option>";
+                        }
+                    } else {
+                        echo "<option disabled>No hay programas disponibles</option>";
+                    }
+                    ?>
                 </select>
+
                 <label>Operador</label>
-                <select>
-                    <option>Ana Rodríguez</option>
-                    <option>Luis García</option>
+                <select name="operador" id="operador" required>
+                    <option value="">Seleccione un operador...</option>
+                    <?php
+                    $queryOperadores = "SELECT id_usuario, nombre FROM usuario WHERE rol = 'operador' ORDER BY nombre ASC";
+                    $resultOperadores = $Ruta->query($queryOperadores);
+
+                    if ($resultOperadores && $resultOperadores->num_rows > 0) {
+                        while ($row = $resultOperadores->fetch_assoc()) {
+                            echo "<option value='{$row['id_usuario']}'>{$row['nombre']}</option>";
+                        }
+                    } else {
+                        echo "<option disabled>No hay operadores registrados</option>";
+                    }
+                    ?>
                 </select>
-                <button class="btn-primary">Crear Asignación</button>
+
+                <label>Productor</label>
+                <select name="productor" id="productor" required>
+                    <option value="">Seleccione un productor...</option>
+                    <?php
+                    $queryProductores = "SELECT id_usuario, nombre FROM usuario WHERE rol = 'productor' ORDER BY nombre ASC";
+                    $resultProductores = $Ruta->query($queryProductores);
+
+                    if ($resultProductores && $resultProductores->num_rows > 0) {
+                        while ($row = $resultProductores->fetch_assoc()) {
+                            echo "<option value='{$row['id_usuario']}'>{$row['nombre']}</option>";
+                        }
+                    } else {
+                        echo "<option disabled>No hay productores registrados</option>";
+                    }
+                    ?>
+                </select>
+                <label>Fecha</label>
+                <input type="date" name="fecha" id="" placeholder="Fecha">
+                <input type="submit" class="btn-primary" value="Crear Asignacion">
+                </form>
             </div>
 
             <div class="card">
@@ -208,13 +297,18 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                 <p>Lista de asignaciones activas</p>
 
                 <div class="usuario">
-                    <div>
-                        <h3>Mañanas en Vivo</h3>
-                        <p>Operador: Ana Rodríguez</p>
+                    <div class="info">
+                        <h3>Ana Rodríguez</h3>
+                        <p>operador@radio.com</p>
                     </div>
+
                     <div class="acciones">
-                        <button><i class="fa-solid fa-pen"></i> </button>
-                        <button><i class="fa-solid fa-trash"></i> </button>
+                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+
+                        <div class="menu-opciones">
+                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                        </div>
                     </div>
                 </div>
             </div>
