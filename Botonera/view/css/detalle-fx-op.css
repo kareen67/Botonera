@@ -53,18 +53,18 @@ body {
     color: var(--texto);
 }
 
+
 /* ===== CONTENIDO ===== */
 .contenido {
     padding: 40px 80px;
 }
-
-.volver {
+button.volver {
     background: none;
     border: 1px solid var(--violeta);
-    color: var(--violeta-oscuro);
+    color: var(--violeta-neon);
     border-radius: 10px;
     padding: 8px 15px;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     margin-bottom: 20px;
     transition: 0.2s;

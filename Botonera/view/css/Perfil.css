@@ -110,7 +110,7 @@ body {
 }
 
 .usuario:hover {
-    background: linear-gradient(90deg, #f29cb7d3 60%, #f8f6ff 100%);
+    background: linear-gradient(90deg, #FAEADD 60%, #f8f6ff 100%);
     /* box-shadow: 0 4px 13px rgba(79, 27, 168, 0.911); */
     border-left-color: #ffca28;
     transform: translateX(5px);
@@ -214,7 +214,7 @@ form input:focus {
 }
 
 form button {
-    background: linear-gradient(90deg, #7336dc 60%, #a78bfa 100%);
+    background: linear-gradient(90deg, #b892ff 60%, #a78bfa 100%);
     color: white;
     border: 2px solid #4a148c;
     border-radius: 8px;
@@ -226,9 +226,10 @@ form button {
 }
 
 form button:hover {
-    background: linear-gradient(90deg, #6d28d9 60%, #c4b5fd 100%);
+    background: linear-gradient(90deg, #4a148c 60%, #c4b5fd 100%);
     box-shadow: 0 4px 16px rgba(124, 58, 237, 0.18);
     transform: scale(1.04);
+    color: var(--gold-accent);
 }
 
 .consejos {
