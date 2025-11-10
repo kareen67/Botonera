@@ -15,12 +15,27 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>detalle de productor de prgrama asignado</title>
     <link rel="stylesheet" href="../../css/detalle-fx.css">
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
-
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
     <main class="contenido">
         <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
 
@@ -37,36 +52,42 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             </div>
         </section>
 
-        <section class="fx-section">
-            <h3><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h3>
-            <p class="sub">Seleccioná un efecto para reproducir</p>
 
-            <div class="fx-grid">
-                <div class="fx-btn">
+        <!-- SECCIÓN DE FX -->
+        <section class="fx-section">
+            <div class="fx-header">
+                <h3><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h3>
+                <p class="sub">Seleccioná un efecto para reproducir</p>
+            </div>
+
+            <div class="fx-lista">
+                <!-- Tarjeta FX -->
+                <div class="fx-item">
+                    <span class="fx-etiqueta">Intro</span>
                     <div class="fx-info">
                         <h4>Intro Programa</h4>
                         <div class="fx-meta">
-                            <span class="categoria intro">Intro</span>
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
                         </div>
                     </div>
+
                     <button class="play"><i class="fa-solid fa-play"></i></button>
                 </div>
 
-                <div class="fx-btn">
+                <div class="fx-item">
+                    <span class="fx-etiqueta">Transición</span>
                     <div class="fx-info">
                         <h4>Cortina Musical</h4>
                         <div class="fx-meta">
-                            <span class="categoria transicion">Transición</span>
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:08</span>
                         </div>
                     </div>
                     <button class="play"><i class="fa-solid fa-play"></i></button>
                 </div>
-
             </div>
         </section>
     </main>
+    <script src="../../js/reproducir.js"></script>
 </body>
 
 </html>

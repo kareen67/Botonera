@@ -14,10 +14,26 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programas Asignados</title>
     <link rel="stylesheet" href="../../css/panel-operador.css" />
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
     <section class="programas">
         <div class="container">
             <div class="titulo">
@@ -51,7 +67,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                     </div>
                     <button class="btn">Ver Detalles →</button>
                 </div>
-              <div class="tarjeta">
+                <div class="tarjeta">
                     <div class="header-tarjeta">
                         <h2>Noche de Rock</h2>
                         <span class="rol"><i class="fa-solid fa-user-gear"></i> Productor</span>
@@ -62,7 +78,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                         <p><i class="fa-solid fa-headphones"></i> Producción</p>
                     </div>
                     <button class="btn">Ver Detalles →</button>
-                </div>   
+                </div>
             </div>
         </div>
     </section>

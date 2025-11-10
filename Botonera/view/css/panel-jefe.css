@@ -1,3 +1,4 @@
+
 :root {
     --fondo: #1a0826;
     --fondo-tarjeta: #2a0b3f;
@@ -18,10 +19,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+/* body {
     background: #f5f1ff;
     color: #333;
-}
+} */
 
 /* --- CONTENIDO --- */
 .container {
@@ -139,7 +140,6 @@ input:focus {
 textarea {
     resize: none;
     height: 80px;
-
 }
 
 .btn-primary {
@@ -161,32 +161,75 @@ textarea {
     transform: scale(1.05);
 }
 
-/* --- LISTAS --- */
+
 .usuario {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #c1a6df;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f5f1ff;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #c1a6df;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f5f1ff;
 }
 
 .acciones {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.info {
-    display: flex;
-    flex-direction: column;
-    /*coloca el horario arriba de los botones */
-    align-items: center;
-    text-align: center;
-    gap: 6px;
-    width: auto;
+.menu-btn {
+  background: none;
+  border: none;
+  color: #522A6F;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-opciones {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.menu-opciones button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2e1065;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.menu-opciones button:hover {
+  background: #f1e5ff;
+}
+
+.acciones.activo .menu-opciones {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 
@@ -216,26 +259,6 @@ textarea {
     border-radius: 10px;
 }
 
-.acciones button {
-    background: #333;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    transition: transform 0.6s;
-    /* Animación suave para volver al estado normal */
-}
-
-.acciones button:hover {
-    background: #c0a5ee;
-    border: 2px solid #7c3aed;
-    transform: scale(1.2);
-    box-shadow: 0 0 6px #7c3aed;
-    transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
-}
-
-
-.acciones .fa-solid:hover {
-    color: #d0c9d5;
-}
 
 .horario {
     background: #ede9fe;

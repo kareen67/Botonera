@@ -5,10 +5,39 @@
     font-family: "Poppins", Arial, sans-serif;
 }
 
+:root {
+  /* 🎨 Colores principales */
+  --violet-dark: #522A6F;
+  --violet-light: #DDAAFF;
+  --pink-soft: #F29CB7;
+  --gold-accent: #FBCF4F;
+  --cream: #FAEADD;
+  --dark-base: #222023;
+
+  /* ✨ Degradados */
+  --gradient-main: linear-gradient(135deg, #4a2a6f, #cfaaff);
+  --gradient-soft: linear-gradient(120deg, #F29CB7, #FBCF4F);
+  --gradient-dark: linear-gradient(160deg, #222023, #522A6F);
+
+  /* 🧁 Colores de fondo */
+  --background-light: #FAEADD;
+  --background-dark: #222023;
+
+  /* 🩶 Texto */
+  --text-dark: #222023;
+  --text-light: #FAEADD;
+
+  /* 🟡 Sombra y brillo */
+  --shadow: 0 4px 12px rgba(34, 32, 35, 0.25);
+  --glow: 0 0 15px rgba(250, 234, 221, 0.6);
+}
+
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    background: #f5f1ff;
+    /* background: #f5f1ff; */
+    /* background: var(--gradient-dark); */
 }
 
 /* 🌟 Mini Top Bar */

@@ -9,6 +9,35 @@
     --gris-suave: #b8a9c9;
     --sombra: rgba(100, 50, 150, 0.3);
 }
+
+:root {
+    /* 🎨 Colores principales */
+    --violet-dark: #522A6F;
+    --violet-light: #DDAAFF;
+    --pink-soft: #F29CB7;
+    --gold-accent: #FBCF4F;
+    --cream: #FAEADD;
+    --dark-base: #222023;
+
+    /* ✨ Degradados */
+    --gradient-main: linear-gradient(135deg, #522A6F, #DDAAFF);
+    --gradient-soft: linear-gradient(120deg, #F29CB7, #FBCF4F);
+    --gradient-dark: linear-gradient(160deg, #222023, #522A6F);
+
+    /* 🧁 Colores de fondo */
+    --background-light: #FAEADD;
+    --background-dark: #222023;
+
+    /* 🩶 Texto */
+    --text-dark: #222023;
+    --text-light: #FAEADD;
+
+    /* 🟡 Sombra y brillo */
+    --shadow: 0 4px 12px rgba(34, 32, 35, 0.25);
+    --glow: 0 0 15px rgba(250, 234, 221, 0.6);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +46,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -35,23 +64,24 @@ body {
 
 .card {
     background: var(--fondo-tarjeta-claro);
-    border: 2px solid #9a8da8;
+    border: 3px solid #7c3aed;
     border-radius: 20px;
-    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.10);
+    box-shadow: 0 4px 1px #ffca28;
     padding: 28px 24px;
     width: 340px;
     position: relative;
-    box-shadow: -10px 5px 3px rgba(132, 68, 243, 0.18);
-    transition:transform 0.3s;
+    /* box-shadow: -10px 5px 3px rgba(132, 68, 243, 0.18); */
+    transition: all 0.3s;
 }
 
 .card:hover {
     transform: translateY(-4px) scale(1.02);
+    box-shadow: 4px 10px 1px #ffca28;
 }
 
 .card h2 {
     font-size: 22px;
-    color: #111;
+    color: #4a148c;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -68,7 +98,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(90deg, #d1c8fa 60%, #f8f6ff 100%);
+    background: linear-gradient(90deg, #cdc2fc 60%, #f8f6ff 100%);
     padding: 12px 16px;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -80,20 +110,23 @@ body {
 }
 
 .usuario:hover {
+    background: linear-gradient(90deg, #f29cb7d3 60%, #f8f6ff 100%);
     /* box-shadow: 0 4px 13px rgba(79, 27, 168, 0.911); */
     border-left-color: #ffca28;
     transform: translateX(5px);
+
 }
 
 .avatar i {
     font-size: 2.7rem;
     color: #1d0546;
-    filter: drop-shadow(0 2px 6px #c4b5fd);
+    /* filter: drop-shadow(0 2px 1px #e0daf6); */
     transition: color 0.3s, filter 0.3s;
 }
 
 .usuario:hover .avatar i {
-    color: #ffca28;;
+    color: #ffffff;
+    transform: rotate(5deg);
 }
 
 .usuario h3 {
@@ -113,7 +146,7 @@ body {
     border-radius: 10px;
     padding: 12px 14px;
     margin-bottom: 16px;
-    box-shadow: 0 1px 4px rgba(124, 58, 237, 0.06);
+    box-shadow: 0 1px 4px rgba(124, 58, 237, 0.378);
     transition: box-shadow 0.3s;
 }
 
@@ -122,31 +155,32 @@ body {
 }
 
 .label {
-    font-weight: 500;
-    color: #000000;
+    font-weight: 600;
+    color: #4a148c;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
 .valor {
-    color: #555;
+    color: #000000;
     margin-top: 4px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .rol-tag {
-    background: #ffca28;
+    background: #FBCF4F;
     color: #4a148c;
     margin: 20px;
     padding: 5px 8px;
-    border-radius: 6px;
+    border-radius: 9px 15px;
+    box-shadow: 2px 3px 0px #F29CB7;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 6px;
     border: solid 2px #eeba1c;
     display: flex;
-    
+
 }
 
 form {
@@ -164,12 +198,13 @@ form label {
 }
 
 form input {
-    border: 1.5px solid #ccc;
+    border: 1.5px solid #c4b5fd;
     border-radius: 8px;
     padding: 10px;
     font-size: 1rem;
     transition: border 0.2s, box-shadow 0.3s;
     background: #f8f6ff;
+    cursor: pointer;
 }
 
 form input:focus {
@@ -179,9 +214,9 @@ form input:focus {
 }
 
 form button {
-    background: linear-gradient(90deg, #7c3aed 60%, #a78bfa 100%);
+    background: linear-gradient(90deg, #7336dc 60%, #a78bfa 100%);
     color: white;
-    border: none;
+    border: 2px solid #4a148c;
     border-radius: 8px;
     padding: 12px;
     font-weight: 600;
@@ -197,7 +232,7 @@ form button:hover {
 }
 
 .consejos {
-    background: #f1f5ff;
+    background: #f3e8ff;
     padding: 16px;
     border-radius: 12px;
     box-shadow: 0 1px 4px rgba(124, 58, 237, 0.07);
@@ -218,13 +253,13 @@ form button:hover {
 
 .consejos h4 {
     margin-top: 0;
-    color: #333;
+    color: #522A6F;
     font-size: 0.9rem;
 }
 
 .consejos ul {
     list-style: disc;
     margin-left: 20px;
-    color: #444;
+    color: #7b2cbf;
     font-size: 1rem;
 }

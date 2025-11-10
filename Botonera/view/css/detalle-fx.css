@@ -1,6 +1,6 @@
 :root {
     --violeta-suave: #e6d5ff;
-    --violeta: #b892ff;
+    --violeta: #713ed1;
     --violeta-oscuro: #7b2cbf;
     --fondo: #f9f7ff;
     --texto: #2d1b3d;
@@ -8,6 +8,43 @@
     --blanco: #fff;
     --sombra: rgba(123, 44, 191, 0.15);
     --resaltado: #f3ecff;
+    --verde: #00c853;
+    --violeta-neon: #c77dff;
+
+}
+
+:root {
+    /* 🎨 Colores principales */
+    --violet-dark: #522A6F;
+    --violet-light: #DDAAFF;
+    --pink-soft: #F29CB7;
+    --gold-accent: #FBCF4F;
+    --cream: #FAEADD;
+    --dark-base: #222023;
+
+    /* ✨ Degradados */
+    --gradient-main: linear-gradient(135deg, #522A6F, #DDAAFF);
+    --gradient-soft: linear-gradient(120deg, #F29CB7, #FBCF4F);
+    --gradient-dark: linear-gradient(160deg, #222023, #522A6F);
+
+    /* 🧁 Colores de fondo */
+    --background-light: #FAEADD;
+    --background-dark: #222023;
+
+    /* 🩶 Texto */
+    --text-dark: #222023;
+    --text-light: #FAEADD;
+
+    /* 🟡 Sombra y brillo */
+    --shadow: 0 4px 12px rgba(34, 32, 35, 0.25);
+    --glow: 0 0 15px rgba(250, 234, 221, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -25,10 +62,10 @@ body {
 .volver {
     background: none;
     border: 1px solid var(--violeta);
-    color: var(--violeta-oscuro);
+    color: var(--violeta-neon);
     border-radius: 10px;
     padding: 8px 15px;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     margin-bottom: 20px;
     transition: 0.2s;
@@ -42,10 +79,16 @@ body {
 .programa {
     background: var(--blanco);
     border-radius: 10px;
-    box-shadow: 0 2px 8px var(--sombra);
+    box-shadow: 5px 5px 8px var(--violet-light);
     padding: 25px;
     margin-bottom: 25px;
     position: relative;
+    transition: all .3s;
+}
+
+.programa:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 4px 7px 5px #a580e9;
 }
 
 .programa h2 {
@@ -56,8 +99,9 @@ body {
     position: absolute;
     top: 20px;
     right: 25px;
-    background: var(--violeta-oscuro);
-    color: white;
+    background: var(--violet-light);
+    box-shadow: 2px 2px 0px #a580e9;
+    color: #522A6F;
     padding: 6px 12px;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -75,114 +119,114 @@ body {
     font-size: 0.9rem;
 }
 
+.detalles p i {
+    color: var(--violeta-neon);
+    margin-right: 6px;
+}
+
 /* ===== FX SECTION ===== */
 .fx-section {
     background: var(--blanco);
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 2px 8px var(--sombra);
+    transition: all .3s;
 }
 
 .fx-section h3 {
-    color: var(--violeta-oscuro);
+    color: var(--violet-dark);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .sub {
-    color: #7b6997;
-    font-size: 0.9rem;
+    color: #202020;
+    font-size: 1rem;
     margin-bottom: 25px;
 }
 
-/* ===== BOTONES FX GRANDES ===== */
-.fx-grid {
+/* ===== FX GRID ===== */
+.fx-lista {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 25px;
 }
 
-.fx-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ===== FX ITEM ===== */
+.fx-item {
+    position: relative;
     background: var(--resaltado);
     border-radius: 16px;
-    padding: 25px 30px;
-    cursor: pointer;
-    transition: 0.25s ease;
-    border: 2px solid transparent;
-    height: 100px;
+    padding: 30px 25px;
     box-shadow: 0 3px 8px var(--sombra);
+    transition: 0.3s ease;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
     overflow: hidden;
-    gap: 15px;
-    
-}
-
-
-.fx-btn:hover {
-    background: var(--violeta-suave);
-    transform: translateY(-3px);
+    border: 2px solid;
     border-color: var(--violeta);
 }
 
-.fx-info {
-    flex: 1;
-    /* ✅ ocupa todo el espacio disponible */
-    min-width: 0;
-    /* ✅ permite que text-overflow funcione */
-    overflow: hidden;
+.fx-item:hover {
+    background: var(--violeta-suave);
+    transform: translateY(-3px);
+
 }
 
+/* Estado reproduciendo */
+.fx-item.reproduciendo {
+    transform: translateX(6px);
+    box-shadow: 0 6px 15px rgba(123, 44, 191, 0.25);
+}
+
+/* ===== Etiqueta categoría ===== */
+.fx-etiqueta {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: var(--violeta);
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: left 10px;
+    border-radius: 20px 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.fx-etiqueta:hover {
+    padding-left: 15px;
+    box-shadow: 10px 5px 0px #a580e9;
+
+}
+
+
+/* ===== INFO ===== */
 .fx-info h4 {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--violeta-oscuro);
+    margin-top: 15px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-
 }
 
 .fx-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 6px;
-}
-
-.categoria {
-    font-size: 0.8rem;
-    font-weight: 600;
-    border-radius: 8px;
-    display: inline-block;
-    padding: 5px 10px;
-}
-
-.categoria.intro {
-    background: #b692ff;
-    color: #fff;
-}
-
-.categoria.transicion {
-    background: #9f6aff;
-    color: #fff;
-}
-
-.categoria.ambiente {
-    background: #c38fff;
-    color: #fff;
-}
-
-.duracion {
     font-size: 0.85rem;
     color: #6b5688;
+    margin-top: 3px;
+
 }
 
-.play {
+/* ===== PLAY ===== */
+button.play {
     background: var(--violeta);
     color: white;
     border: none;
@@ -193,12 +237,20 @@ body {
     cursor: pointer;
     transition: 0.3s;
     flex-shrink: 0;
+    margin-top: 10px;
 }
 
 .play:hover {
-    background: var(--violeta-oscuro);
+    background: var(--texto);
     transform: scale(1.1);
 }
+
+/* Play activo */
+.fx-item.reproduciendo .play {
+    background: #1b0e26;
+
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .contenido {
@@ -222,9 +274,11 @@ body {
     }
 
     .fx-info h4 {
-        white-space: normal; /* permite saltos de línea */
+        white-space: normal;
+        /* permite saltos de línea */
         text-overflow: unset;
-        overflow-wrap: break-word; /* corta palabras largas */
+        overflow-wrap: break-word;
+        /* corta palabras largas */
         margin-bottom: 6px;
         line-height: 1.2;
     }

@@ -17,12 +17,27 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <link rel="stylesheet" href="../../css/detalle-fx-op.css" />
     <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
-
+    <link rel="stylesheet" href="../../css/fondo-musical.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 
 <body>
+    <div class="musical-background">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♬</span>
+        <span>♩</span>
+        <span>♭</span>
+        <span>♮</span>
+        <span>♯</span>
+        <span>♬</span>
+        <span>♪</span>
+        <span>♩</span>
+        <span>♫</span>
+        <span>♭</span>
+    </div>
     <main class="contenido">
 
         <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
@@ -85,7 +100,6 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:08</span>
                         </div>
                     </div>
-
                     <button class="play"><i class="fa-solid fa-play"></i></button>
                 </div>
             </div>
@@ -99,6 +113,8 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                 <input type="text" placeholder="Ej: Disparo Explosivo">
                 <label>Categoría:</label>
                 <input type="text" placeholder="Ej: Acción">
+                <label>Descripción:</label>
+                <textarea placeholder="Opcional"></textarea>
                 <label>Archivo:</label>
                 <input type="file">
                 <div class="modal-buttons">
