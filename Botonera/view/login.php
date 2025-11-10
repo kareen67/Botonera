@@ -46,7 +46,7 @@
     include("../controller/conexionBD.php");
     include("../model/login.php");
     ?>
-    <script src="js/script.js"></script>
+    
 </body>
 
 </html>

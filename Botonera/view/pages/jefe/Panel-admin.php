@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
+    header("Location: ../../login.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,9 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración principal</title>
     <link rel="stylesheet" href="../../css/panel-jefe.css">
-    <link rel="stylesheet" href="../../css/header.css">
-    <link rel="stylesheet" href="../../css/fondo-musical.css">
-    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="../../js/reproducir.js"></script>
 </head>
@@ -28,25 +34,25 @@
         <section id="usuarios" class="panel-section">
 
             <div class="card form-card">
-                <form action="" method="post">
+                <form action="../../../model/guardarUsuario.php" method="post">
                     <h2>+ Crear Usuario</h2>
                     <p>Agregar un nuevo usuario al sistema</p>
                     <label>Nombre</label>
-                    <input type="text" placeholder="Nombre completo">
+                    <input name="nombre" type="text" placeholder="Nombre completo" required>
 
                     <label>Email</label>
-                    <input type="email" placeholder="email@ejemplo.com">
+                    <input name="email" type="email" placeholder="email@ejemplo.com" required>
 
                     <label>Contraseña</label>
-                    <input type="password" placeholder="Contraseña segura">
+                    <input name="password" type="password" placeholder="Contraseña segura" required>
 
                     <label>Rol</label>
-                    <select>
-                        <option>Operador</option>
-                        <option>Productor</option>
-                        <option>Jefe de operadores</option>
+                    <select name="rol" required>
+                        <option value="operador" >Operador</option>
+                        <option value="productor" >Productor</option>
+                        <option value="jefe" >Jefe de operadores</option>
                     </select>
-                    <input type="submit" value="Crear Usuario" class="btn-primary">
+                    <input type="submit" name="crear_usuario" value="Crear Usuario" class="btn-primary">
                 </form>
             </div>
 
@@ -56,20 +62,14 @@
                 <p>Lista de usuarios registrados</p>
 
                 <div class="usuario">
-                    <div class="info">
+                    <div>
                         <h3>Ana Rodríguez</h3>
                         <p>operador@radio.com</p>
                     </div>
-
                     <div class="acciones">
+                        <!-- <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button> -->
                         <span class="rol operador">Operador</span>
-
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                        </div>
                     </div>
                 </div>
 
@@ -78,33 +78,29 @@
                         <h3>Luis García</h3>
                         <p>productor@radio.com</p>
                     </div>
-
                     <div class="acciones">
+                        <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
                         <span class="rol productor">Productor</span>
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                        </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
 
         <!-- SECCIÓN PROGRAMAS -->
         <section id="programas" class="panel-section hidden">
             <div class="card form-card">
+                <form action="../../../model/guardarPrograma.php" method="post">
                 <h2>+ Crear Programa</h2>
                 <p>Agregar un nuevo programa al sistema</p>
                 <label>Nombre del programa</label>
-                <input type="text" placeholder="Ej: Mañanas en Vivo">
+                <input name="nombre" type="text" placeholder="Ej: Mañanas en Vivo" required>
                 <label>Horario</label>
-                <input type="text" placeholder="Ej: 08:00 - 10:00">
+                <input name="horario" type="text" placeholder="Ej: 08:00 - 10:00" required>
                 <label>Descripción</label>
-                <textarea placeholder="Descripción del programa"></textarea>
-                <button class="btn-primary">Crear Programa</button>
+                <textarea name="descripcion" placeholder="Descripción del programa" required></textarea>
+                <input name="crear_programa" class="btn-primary" type="submit" value="Crear Programa">
+                </form>
             </div>
 
             <div class="card">
@@ -118,13 +114,9 @@
                     </div>
                     <div class="info">
                         <span class="horario">08:00 - 10:00</span>
-                    </div>
-
-                    <div class="acciones">
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                        <div class="acciones">
+                            <button><i class="fa-solid fa-pen"></i></button>
+                            <button><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -136,14 +128,11 @@
                     </div>
                     <div class="info">
                         <span class="horario">08:00 - 10:00</span>
-                    </div>
-                    <div class="acciones">
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                        </div>
 
+                        <div class="acciones">
+                            <button><i class="fa-solid fa-pen"></i></button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,11 +153,6 @@
                     <option>Ana Rodríguez</option>
                     <option>Luis García</option>
                 </select>
-                <label>Productor</label>
-                <select>
-                    <option>Ana Rodríguez</option>
-                    <option>Luis García</option>
-                </select>
                 <button class="btn-primary">Crear Asignación</button>
             </div>
 
@@ -177,18 +161,13 @@
                 <p>Lista de asignaciones activas</p>
 
                 <div class="usuario">
-                    <div class="info">
-                        <h3>Ana Rodríguez</h3>
-                        <p>operador@radio.com</p>
+                    <div>
+                        <h3>Mañanas en Vivo</h3>
+                        <p>Operador: Ana Rodríguez</p>
                     </div>
-
                     <div class="acciones">
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                        </div>
+                        <button><i class="fa-solid fa-pen"></i> </button>
+                        <button><i class="fa-solid fa-trash"></i> </button>
                     </div>
                 </div>
             </div>
@@ -208,34 +187,6 @@
             });
         });
     </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const botones = document.querySelectorAll('.menu-btn');
-
-            botones.forEach(boton => {
-                boton.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Evita que el clic cierre el menú
-                    const acciones = boton.closest('.acciones');
-                    const activo = acciones.classList.contains('activo');
-
-                    // Cierra todos los demás
-                    document.querySelectorAll('.acciones').forEach(a => a.classList.remove('activo'));
-
-                    // Alterna el actual
-                    if (!activo) acciones.classList.add('activo');
-                });
-            });
-
-            // Cierra si se hace clic fuera
-            document.addEventListener('click', () => {
-                document.querySelectorAll('.acciones').forEach(a => a.classList.remove('activo'));
-            });
-        });
-    </script>
-
-
-
 </body>
 
 </html>

@@ -7,6 +7,7 @@ if (!empty($_POST["ingresar"])) {
     if (!empty($_POST["email"]) && !empty($_POST["password"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
+        
 
         // Consulta preparada
         $stmt = $Ruta->prepare("SELECT * FROM usuario WHERE email = ?");
@@ -20,14 +21,15 @@ if (!empty($_POST["ingresar"])) {
                 // Guarda los datos en sesión
                 $_SESSION["usuario"] = $usuario->email;
                 $_SESSION["rol"] = $usuario->rol; // <-- asegurate que tu tabla tenga este campo
+                $_SESSION["id_usuario"] = $usuario->id_usuario; 
 
                 // Redirección según rol
                 switch ($usuario->rol) {
                     case 'jefe':
-                        header("Location: ../view/pages/jefe/Panel-admin.html");
+                        header("Location: ../view/pages/jefe/Panel-admin.php");
                         break;
                     case 'operador':
-                        header("Location: ../view/pages/operador/panel-operador.html");
+                        header("Location: ../view/pages/operador/fx-reproducir.php");
                         break;
                     case 'productor':
                         header("Location: ../view/pages/productor/panel-productor.html");
