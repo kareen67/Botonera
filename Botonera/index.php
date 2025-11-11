@@ -35,7 +35,7 @@
 
     <section class="bienvenida">
         <div class="contenedor">
-            <h1><i class="fa-solid fa-music"></i> Bienvenido a la Botonera FX</h1>
+            <h1><i class="fa-solid fa-music"></i> Bienvenido a la Botonera SonarBo</h1>
             <p>Gestioná tus efectos de sonido de forma rápida y simple.</p>
             <button onclick="location.href='login.html'">
                 <i class="fa-solid fa-right-to-bracket"></i> Ingresar
