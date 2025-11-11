@@ -113,14 +113,14 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                     echo "<p>No hay usuarios registrados.</p>";
                 endif;
                 ?>
-                <div class="usuario">
+                <!-- <div class="usuario">
                     <div>
                         <h3>Ana Rodríguez</h3>
                         <p>operador@radio.com</p>
                     </div>
                     <div class="acciones">
-                        <!-- <button><i class="fa-solid fa-pen"></i></button>
-                        <button><i class="fa-solid fa-trash"></i></button> -->
+                        <button><i class="fa-solid fa-pen"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button> 
                         <span class="rol operador">Operador</span>
                     </div>
                 </div>
@@ -135,7 +135,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                         <button><i class="fa-solid fa-trash"></i></button>
                         <span class="rol productor">Productor</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -195,7 +195,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                     endif;
                     ?>
 
-                <div class="usuario">
+                <!-- <div class="usuario">
                     <div>
                         <h3>Mañanas en Vivo</h3>
                         <p>Programa diario de noticias y entretenimiento</p>
@@ -222,7 +222,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                             <button><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
