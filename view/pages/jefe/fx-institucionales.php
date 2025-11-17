@@ -1,10 +1,10 @@
-<!-- <?php
+<?php
 session_start();
 if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     header("Location: ../../../login.php");
     exit();
 }
-?> -->
+?> 
 
 
 <!DOCTYPE html>
@@ -127,17 +127,22 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <!-- MODAL: AGREGAR FX -->
     <div id="modalAgregar" class="modal">
         <div class="modal-content">
-            <h2>Agregar Nuevo FX institucional</h2>
-            <label>Nombre:</label>
-            <input type="text" placeholder="Ej: Disparo Explosivo">
-            <label>Categoría:</label>
-            <input type="text" placeholder="Ej: Acción">
-            <label>Archivo:</label>
-            <input type="file">
-            <div class="modal-buttons">
-                <button class="btn cancelar">Cancelar</button>
-                <button class="btn primary">Guardar</button>
-            </div>
+            <form action="../../../model/guardarFXinstitucional.php" method="POST" enctype="multipart/form-data">
+                <h2>Agregar Nuevo FX Institucional</h2>
+
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required placeholder="Ej: Disparo Explosivo">
+
+                <label>Categoría:</label>
+                <input type="text" name="clasificacion" required placeholder="Ej: Acción">
+
+                <label>Archivo:</label>
+                <input type="file" name="archivo" required>                                                           
+                <div class="modal-buttons">
+                    <button class="btn cancelar">Cancelar</button>
+                    <input type="submit" class="btn primary" value="Guardar">
+                </div>
+            </form>
         </div>
     </div>
 
@@ -154,6 +159,23 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     </script>
     <script src="../../js/biblioteca.js"></script>
     <script src="../../js/fx-institucional.js"></script>
+    <script>
+    let audioActual = null;
+
+    function reproducirFX(ruta) {
+        // Si ya hay uno reproduciéndose, lo detenemos
+        if (audioActual) {
+            audioActual.pause();
+            audioActual.currentTime = 0;
+        }
+
+        // Creamos un nuevo objeto de audio
+        audioActual = new Audio('../' + ruta); // 🔸 Ajusta la ruta según la ubicación del archivo PHP
+        audioActual.play()
+            .then(() => console.log("Reproduciendo:", ruta))
+            .catch(err => console.error("Error al reproducir FX:", err));
+    }
+    </script>
 </body>
 
 </html>

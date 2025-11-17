@@ -104,40 +104,56 @@ ini_set('display_errors', 0);
                     <button class="play" onclick="reproducirFX('../../<?= $ruta ?>')"><i class="fa-solid fa-play"></i></button>
                 </div>
                 <?php
-                endwhile;
-            else:
-                echo "<p>No tienes FX cargados.</p>";
-            endif;
+                    endwhile;
+                    else:
+                        echo "<p>No tienes FX cargados.</p>";
+                    endif;
 
-$stmt->close();
-?>
+                $stmt->close();
+                ?>
 
             </div>
 
             <!-- FX INSTITUCIONALES  -->
             <div id="institucionales" class="fx-inst hidden">
-                <div class="fx-item">
-                    <span class="fx-etiqueta">Intro</span>
-                    <div class="fx-info">
-                        <h4>Inicio Programa</h4>
-                        <div class="fx-meta">
-                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
-                        </div>
-                    </div>
-                    <button class="play"><i class="fa-solid fa-play"></i></button>
+                <?php
+                    include_once("../../../controller/conexionBD.php");
 
-                </div>
-                <div class="fx-item">
-                    <span class="fx-etiqueta">Intro</span>
-                    <div class="fx-info">
-                        <h4>Inicio Programa</h4>
-                        <div class="fx-meta">
-                            <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
-                        </div>
-                    </div>
-                    <button class="play"><i class="fa-solid fa-play"></i></button>
+                    $query = "SELECT id_fx, nombre, clasificacion_fx, ruta_archivo 
+                            FROM fx 
+                            WHERE id_usuario IS NULL AND id_programa IS NULL";
 
-                </div>
+                    $result = $Ruta->query($query);
+
+                    if ($result && $result->num_rows > 0):
+                        while ($fx = $result->fetch_assoc()):
+                            $nombre = htmlspecialchars($fx["nombre"]);
+                            $clasificacion = htmlspecialchars($fx["clasificacion_fx"]);
+                            $ruta = htmlspecialchars($fx["ruta_archivo"]);
+                            $id_fx = $fx["id_fx"];
+                ?>
+                    <div class="fx-item" data-id="<?= $id_fx ?>">
+                        <span class="fx-etiqueta"><?= $clasificacion ?></span>
+
+                        <div class="fx-info">
+                            <h4><?= $nombre ?></h4>
+                            <div class="fx-meta">
+                                <span class="duracion"><i class="fa-regular fa-clock"></i> — </span>
+                            </div>
+                        </div>
+
+                        <!-- 🔊 Botón para reproducir -->
+                        <button class="play" onclick="reproducirFX('../../<?= $ruta ?>')">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+
+                <?php
+                    endwhile;
+                    else:
+                        echo "<p>No hay FX institucionales disponibles.</p>";
+                    endif;
+                ?>
             </div>
         </section>
 
