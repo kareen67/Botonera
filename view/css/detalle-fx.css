@@ -59,7 +59,7 @@ body {
     padding: 40px 80px;
 }
 
-.volver {
+a.volver {
     background: none;
     border: 1px solid var(--violeta);
     color: var(--violeta-neon);
@@ -67,8 +67,10 @@ body {
     padding: 8px 15px;
     font-weight: 700;
     cursor: pointer;
-    margin-bottom: 20px;
     transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .volver:hover {

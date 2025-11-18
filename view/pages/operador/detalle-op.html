@@ -14,7 +14,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FX del Programa - Productor</title>
-    <link rel="stylesheet" href="../../css/detalle-fx-op.css"/>
+    <link rel="stylesheet" href="../../css/detalle-fx-op.css" />
     <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
     <link rel="stylesheet" href="../../css/fondo-musical.css">
@@ -41,7 +41,9 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
     </div>
     <main class="contenido">
 
-        <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
+        <a href="../programas/programas.html" class="volver">
+            <i class="fa-solid fa-arrow-left"></i> Volver a Programas
+        </a>
 
         <!-- SECCIÓN DEL PROGRAMA -->
         <section class="programa">
@@ -124,7 +126,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
                 </div>
             </div>
         </div>
- <!-- MODAL: EDITAR FX -->
+        <!-- MODAL: EDITAR FX -->
         <div id="modalEditar" class="modal">
             <div class="modal-content">
                 <h2>Editar FX de Programa</h2>
@@ -155,13 +157,13 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
 
     </main>
 
-    
+
 
     <script src="../../js/reproducir.js"></script>
-     <script src="../../js/player.js"></script>
+    <script src="../../js/player.js"></script>
     <script src="../../js/opciones.js"></script>
     <!-- <script src="../../js/modal-tabs.js"></script> -->
-     <script src="../../js/modal-detalle-op.js"></script>
+    <script src="../../js/modal-detalle-op.js"></script>
     <script src="../../js/barra-reproduccion.js"></script>
 
 
