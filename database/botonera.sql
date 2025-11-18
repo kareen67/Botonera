@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2025 a las 14:57:13
+-- Tiempo de generación: 18-11-2025 a las 14:24:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `fx` (
 
 INSERT INTO `fx` (`id_fx`, `ruta_archivo`, `clasificacion_fx`, `nombre`, `id_programa`, `id_usuario`) VALUES
 (3, 'uploads/fx/pedoo-2.mp3', 'a', 'a', NULL, 8),
-(4, 'uploads/fx/anime-wow-sound-effect.mp3', 'waw', 'waw', NULL, 8);
+(4, 'uploads/fx/anime-wow-sound-effect.mp3', 'waw', 'waw', NULL, 8),
+(5, 'uploads/fx/among-us-role-reveal-sound.mp3', 'algo2', 'algo', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `fx`
 --
 ALTER TABLE `fx`
-  MODIFY `id_fx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_fx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `operador_programa`
