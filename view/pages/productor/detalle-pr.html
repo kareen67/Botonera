@@ -17,6 +17,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
     <link rel="stylesheet" href="../../css/detalle-fx.css">
     <link rel="stylesheet" href="../../css/fondo-musical.css">
     <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/barra-reproducir.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -37,8 +38,9 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
         <span>♭</span>
     </div>
     <main class="contenido">
-        <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
-
+        <a href="../programas/programas.html" class="volver">
+            <i class="fa-solid fa-arrow-left"></i> Volver a Programas
+        </a>
         <section class="programa">
             <div class="info-programa">
                 <h2>Tarde Musical</h2>
@@ -87,7 +89,9 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
             </div>
         </section>
     </main>
+    <script src="../../js/player.js"></script>
     <script src="../../js/reproducir.js"></script>
+    <script src="../../js/barra-reproduccion.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,6 @@ ini_set('display_errors', 0);
 
     <link rel="stylesheet" href="../../css/fondo-musical.css">
     <link rel="stylesheet" href="../../css/header.css">
-    <!-- <link rel="stylesheet" href="../../css/fondo-musical.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -177,10 +176,10 @@ ini_set('display_errors', 0);
         </div>
 
     </main>
-    <script src="../../js/opciones.js"></script>
     <script src="../../js/modal-tabs.js"></script>
-    <script>
-        // Botón play animado
+    <script src="../../js/reproducir.js"></script>
+    <script src="../../js/biblioteca.js"></script>
+    <!-- <script>
         document.querySelectorAll('.play').forEach(btn => {
             btn.addEventListener('click', () => {
                 btn.classList.toggle('playing');
@@ -189,8 +188,10 @@ ini_set('display_errors', 0);
                     : '<i class="fa-solid fa-play"></i>';
             });
         });
-    </script>
+    </script> -->
+    
     <script>
+
 let audioActual = null;
 
 function reproducirFX(ruta) {

@@ -54,8 +54,8 @@
 .descripcion {
   background: var(--blanco);
   border-radius: 10px;
-  border-bottom: 3px solid #a580e9 ;
-  box-shadow: 0 2px 8px #713ed1;
+  border-bottom: 3px solid #a580e9;
+  border-bottom: solid 4px #c77dff;
   padding: 25px;
   margin-bottom: 25px;
 }
@@ -95,7 +95,8 @@ button.agregar-fx {
 }
 
 button.agregar-fx:hover {
-  background: var(--efecto);
+  background: var(--violet-dark);
+  color: #ffffff;
 }
 
 /* === TABS === */
@@ -109,7 +110,7 @@ button.agregar-fx:hover {
 }
 
 .tab {
-  background: var(--efecto);
+  background: var(--blanco);
   color: var(--violet-dark);
   font-weight: 600;
   border: none;
@@ -119,16 +120,15 @@ button.agregar-fx:hover {
   transition: 0.2s;
 }
 
-.tab.active {
+/* .tab.active {
   background: var(--gold-accent);
   color: rgb(0, 0, 0);
-  
-}
+} */
 
 .tab:hover {
-  background: #f3ecff;
+  background: var(--gold-accent);
   transform: scale(1.1);
-  
+
 }
 
 /* === FX GRID (botonera) === */

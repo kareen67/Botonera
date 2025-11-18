@@ -58,7 +58,8 @@ body {
 .contenido {
     padding: 40px 80px;
 }
-button.volver {
+
+a.volver {
     background: none;
     border: 1px solid var(--violeta);
     color: var(--violeta-neon);
@@ -66,8 +67,10 @@ button.volver {
     padding: 8px 15px;
     font-weight: 700;
     cursor: pointer;
-    margin-bottom: 20px;
     transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .volver:hover {
@@ -78,17 +81,12 @@ button.volver {
 .programa {
     background: var(--blanco);
     border-radius: 10px;
-    box-shadow: 5px 5px 8px var(--violet-light);
+    border-bottom: solid 4px #c77dff ; 
     padding: 25px;
     margin-bottom: 25px;
     position: relative;
     transition: all .3s;
 
-}
-
-.programa:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 4px 7px 5px #a580e9;
 }
 
 .programa h2 {
@@ -292,6 +290,7 @@ button.play {
     transform: translateY(-4px) scale(1.02);
 
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {

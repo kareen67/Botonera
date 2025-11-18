@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Barra global abajo */
+#global-player {
+    position: fixed;
+    border-radius: 25px;
+    bottom: -120px; /* oculto al inicio */
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: rgba(22, 18, 38, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    border-top: 2px solid #6a4bc4;
+    color: white;
+    transition: bottom 0.4s ease;
+    z-index: 9999;
+}
+
+/* Aparece */
+#global-player.active {
+    bottom: 0;
+}
+
+.gp-left h4 {
+    margin: 0;
+}
+
+/* Waveform */
+.gp-wave {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.wave {
+    width: 7px;
+    height: 25px;
+    background: #b8a0ff;
+    border-radius: 5px;
+    animation: wave 1s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-child(2) { animation-delay: 0.2s; }
+.wave:nth-child(3) { animation-delay: 0.4s; }
+.wave:nth-child(4) { animation-delay: 0.6s; }
+.wave:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes wave {
+    0%, 100% { height: 15px; }
+    50% { height: 40px; }
+}
+
+/* Controles */
+.gp-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#global-player button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    transition: .2s;
+}
+
+#global-player button:hover {
+    transform: scale(1.15);
+}
+
+#gp-volume {
+    width: 150px; 
+}
+
+#gp-seek {
+    width: 180px;
+    height: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#gp-current-time,
+#gp-total-time {
+    font-size: 14px;
+    opacity: 0.8;
+}
