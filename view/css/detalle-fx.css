@@ -79,7 +79,7 @@ body {
 .programa {
     background: var(--blanco);
     border-radius: 10px;
-    box-shadow: 5px 5px 8px var(--violet-light);
+    border-bottom: solid 4px #c77dff ; 
     padding: 25px;
     margin-bottom: 25px;
     position: relative;

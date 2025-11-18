@@ -1,78 +1,93 @@
-let currentAudio = null;
+let audioActual = null;
+let reproduciento = false;
 
-const globalPlayer = document.getElementById("global-player");
-const gpTitle = document.querySelector(".gp-title");
-const gpPlayPause = document.getElementById("gp-playpause");
-const gpStop = document.getElementById("gp-stop");
-const gpRewind = document.getElementById("gp-rewind");
-const gpForward = document.getElementById("gp-forward");
-const gpVolume = document.getElementById("gp-volume");
+const barra = document.getElementById("global-player");
+const titulo = document.getElementById("gp-title");
+const btnPlay = document.getElementById("gp-play");
+const seek = document.getElementById("gp-seek");
+const vol = document.getElementById("gp-volume");
 
-// Cada tarjeta FX
-document.querySelectorAll(".fx-item").forEach(fx => {
+function reproducirGlobalPlayer(nombreFx) {
+    titulo.textContent = nombreFx;
+    mostrarBarra();
+}
 
-    const playBtn = fx.querySelector(".play");
+function pausarGlobalPlayer() {
+    ocultarBarra();
+}
 
-    playBtn.addEventListener("click", () => {
 
-        // Si ya había un audio sonando, detenerlo
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-        }
+function mostrarBarra() {
+    barra.classList.add("active");
+}
 
-        // Crear nuevo audio (cambiar por tu ruta real)
-        const audio = new Audio("ruta/a/tu/fx.mp3");
-        currentAudio = audio;
+function ocultarBarra() {
+    barra.classList.remove("active");
+}
 
-        // Mostrar info del FX abajo
-        const title = fx.querySelector("h4").textContent;
-        gpTitle.textContent = title;
 
-        // Mostrar barra animada
-        globalPlayer.classList.add("active");
+document.querySelectorAll(".fx-item .play").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
 
-        // Reproducir
-        audio.play();
-        gpPlayPause.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+        // Simulación de un audio distinto por cada tarjeta
+        let url = `../../audios/fx${i + 1}.mp3`;
 
-        // Volume
-        audio.volume = gpVolume.value;
+        if (audioActual) audioActual.pause();
 
-        gpVolume.addEventListener("input", () => {
-            audio.volume = gpVolume.value;
-        });
+        audioActual = new Audio(url);
+        audioActual.volume = vol.value / 100;
+        audioActual.play();
 
-        // Controles globales
-        gpPlayPause.onclick = () => {
-            if (audio.paused) {
-                audio.play();
-                gpPlayPause.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-            } else {
-                audio.pause();
-                gpPlayPause.innerHTML = `<i class="fa-solid fa-play"></i>`;
-            }
-        };
+        titulo.textContent = btn.closest(".fx-item").querySelector("h4").textContent;
 
-        gpStop.onclick = () => {
-            audio.pause();
-            audio.currentTime = 0;
-            gpPlayPause.innerHTML = `<i class="fa-solid fa-play"></i>`;
-            globalPlayer.classList.remove("active"); // esconder barra
-        };
+        mostrarBarra();
+        reproduciento = true;
 
-        gpRewind.onclick = () => {
-            audio.currentTime = Math.max(0, audio.currentTime - 5);
-        };
-
-        gpForward.onclick = () => {
-            audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
-        };
-
-        // Cuando termina el audio → ocultar barra
-        audio.addEventListener("ended", () => {
-            globalPlayer.classList.remove("active");
-        });
-
+        btnPlay.innerHTML = `<i class="fa-solid fa-pause"></i>`;
     });
 });
+
+// Botón de play/pause
+btnPlay.onclick = () => {
+    if (!audioActual) return;
+
+    if (reproduciento) {
+        audioActual.pause();
+        btnPlay.innerHTML = `<i class="fa-solid fa-play"></i>`;
+        ocultarBarra();
+    } else {
+        audioActual.play();
+        btnPlay.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+        mostrarBarra();
+    }
+
+    reproduciento = !reproduciento;
+};
+
+// Avanzar y retroceder
+document.getElementById("gp-forward").onclick = () => {
+    if (audioActual) audioActual.currentTime += 3;
+};
+
+document.getElementById("gp-back").onclick = () => {
+    if (audioActual) audioActual.currentTime -= 3;
+};
+
+// Volumen
+vol.oninput = () => {
+    if (audioActual) audioActual.volume = vol.value / 100;
+};
+
+// Seek
+seek.oninput = () => {
+    if (audioActual) {
+        audioActual.currentTime = (seek.value / 100) * audioActual.duration;
+    }
+};
+
+// Actualizar seek mientras reproduce
+setInterval(() => {
+    if (audioActual && audioActual.duration) {
+        seek.value = (audioActual.currentTime / audioActual.duration) * 100;
+    }
+}, 200);

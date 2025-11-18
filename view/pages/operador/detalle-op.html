@@ -19,6 +19,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
     <link rel="stylesheet" href="../../css/modal-agregar.css">
     <link rel="stylesheet" href="../../css/fondo-musical.css">
     <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/barra-reproducir.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -127,34 +128,8 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
 
     </main>
 
-    <!-- PLAYER GLOBAL ABAJO -->
-    <div id="global-player">
-        <div class="gp-left">
-            <h4 class="gp-title">Reproduciendo...</h4>
-        </div>
-
-          <div class="gp-controls">
-            <button id="gp-rewind"><i class="fa-solid fa-backward"></i></button>
-            <button id="gp-playpause"><i class="fa-solid fa-pause"></i></button>
-            <button id="gp-stop"><i class="fa-solid fa-stop"></i></button>
-            <button id="gp-forward"><i class="fa-solid fa-forward"></i></button>
-
-            <input type="range" id="gp-volume" min="0" max="1" step="0.01" value="1">
-        </div>
-
-        <div class="gp-wave">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>
-
-      
-    </div>
-
-
     <script src="../../js/reproducir.js"></script>
+     <script src="../../js/player.js"></script>
     <script src="../../js/opciones.js"></script>
     <script src="../../js/modal-tabs.js"></script>
     <script src="../../js/barra-reproduccion.js"></script>
