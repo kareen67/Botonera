@@ -9,27 +9,35 @@ document.addEventListener("DOMContentLoaded", () => {
             const fxItem = btn.closest(".fx-item");
             const tituloFx = fxItem.querySelector("h4").textContent;
 
-            // Si YA está reproduciendo → pausar + esconder barra
+            // Si ya está reproduciendo → pausar
             if (fxItem.classList.contains("reproduciendo")) {
 
                 fxItem.classList.remove("reproduciendo");
+
+                // ICONO: barras → play
                 btn.innerHTML = '<i class="fa-solid fa-play"></i>';
 
-                // 🔥 Detener barra global
+                // Detener barra global
                 pausarGlobalPlayer();
+
+                // Detener audio actual
+                if (audioActual) audioActual.pause();
 
             } else {
 
-                // Quitar reproducción en los otros
+                // Detener cualquier otro FX
                 document.querySelectorAll(".fx-item.reproduciendo").forEach(item => {
                     item.classList.remove("reproduciendo");
                     item.querySelector(".play").innerHTML = '<i class="fa-solid fa-play"></i>';
                 });
 
+                // Activar reproducción
                 fxItem.classList.add("reproduciendo");
-                btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
 
-                // 🔥 Iniciar barra global
+                // ICONO: play → dos lineas verticales
+                btn.innerHTML = '<i class="fa-solid fa-grip-lines-vertical"></i>';
+
+                // Reproducir barra global
                 reproducirGlobalPlayer(tituloFx, fxItem);
             }
 

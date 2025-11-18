@@ -48,21 +48,46 @@ document.querySelectorAll(".fx-item .play").forEach((btn, i) => {
 });
 
 // Botón de play/pause
+// Botón de play/pause del reproductor global
 btnPlay.onclick = () => {
     if (!audioActual) return;
 
     if (reproduciento) {
+        // PAUSAR audio
         audioActual.pause();
+        reproduciento = false;
+
+        // Cambiar el botón global
         btnPlay.innerHTML = `<i class="fa-solid fa-play"></i>`;
+
+        // Ocultar barra si querés
         ocultarBarra();
+
+        // 🔥 Detener iconos de las tarjetas
+        const activo = document.querySelector(".fx-item.reproduciendo");
+        if (activo) {
+            activo.classList.remove("reproduciendo");
+            activo.querySelector(".play").innerHTML =
+                '<i class="fa-solid fa-play"></i>';
+        }
+
     } else {
+        // REANUDAR audio
         audioActual.play();
+        reproduciento = true;
+
         btnPlay.innerHTML = `<i class="fa-solid fa-pause"></i>`;
         mostrarBarra();
-    }
 
-    reproduciento = !reproduciento;
+        // 🔥 Volver a activar icono de barras en la tarjeta correcta
+        const activo = document.querySelector(".fx-item.reproduciendo");
+        if (activo) {
+            activo.querySelector(".play").innerHTML =
+                '<i class="fa-solid fa-grip-lines-vertical"></i>';
+        }
+    }
 };
+
 
 // Avanzar y retroceder
 document.getElementById("gp-forward").onclick = () => {
