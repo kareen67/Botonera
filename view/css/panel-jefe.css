@@ -77,7 +77,7 @@ h3 {
     display: flex;
     gap: 10px;
     margin: 20px 0;
-    background-color: #7b2cbf;
+    background-color: #522A6F;
     padding: 10px;
     border-radius: 8px;
 }
@@ -306,13 +306,6 @@ textarea {
     margin-bottom: 6px;
     box-shadow: 0 1px 4px rgba(124, 58, 237, 0.08);
 
-}
-
-.horario:hover {
-    background: #c0a5ee;
-    color: #fff;
-    box-shadow: 0 0 6px #7c3aed;
-    transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
 }
 
 /* === ESTILOS BASE DEL MODAL === */
