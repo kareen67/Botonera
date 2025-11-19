@@ -175,7 +175,38 @@ ini_set('display_errors', 0);
             </div>
         </div>
 
+         <!-- MODAL: EDITAR FX -->
+        <div id="modalEditar" class="modal">
+            <div class="modal-content">
+                <h2>Editar FX</h2>
+                <label>Nuevo nombre:</label>
+                <input type="text" placeholder="Ej: Cortina Noticias">
+                <label>Categoría:</label>
+                <input type="text" placeholder="Ej: Informativo">
+                <label>Archivo nuevo (opcional):</label>
+                <input type="file">
+                <div class="modal-buttons">
+                    <button class="btn cancelar">Cancelar</button>
+                    <button class="btn primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: CONFIRMAR ELIMINACIÓN -->
+        <div id="modalEliminar" class="modal">
+            <div class="modal-content">
+                <h2>Eliminar FX</h2>
+                <p>¿Seguro que querés eliminar este FX? Esta acción no se puede deshacer.</p>
+                <div class="modal-buttons">
+                    <button class="btn cancelar">Cancelar</button>
+                    <button class="btn primary eliminar">Eliminar</button>
+                </div>
+            </div>
+        </div>
     </main>
+    <script src="../../js/player.js"></script>
+    <script src="../../js/barra-reproduccion.js"></script>
+
     <script src="../../js/modal-tabs.js"></script>
     <script src="../../js/reproducir.js"></script>
     <script src="../../js/biblioteca.js"></script>
@@ -191,10 +222,9 @@ ini_set('display_errors', 0);
     </script> -->
     
     <script>
+    let audioActual = null;
 
-let audioActual = null;
-
-function reproducirFX(ruta) {
+    function reproducirFX(ruta) {
     // Si ya hay uno reproduciéndose, lo detenemos
     if (audioActual) {
         audioActual.pause();
@@ -206,7 +236,7 @@ function reproducirFX(ruta) {
     audioActual.play()
         .then(() => console.log("Reproduciendo:", ruta))
         .catch(err => console.error("Error al reproducir FX:", err));
-}
+    }
 </script>
 
 </body>

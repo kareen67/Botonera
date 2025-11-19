@@ -1,9 +1,14 @@
-* {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", Arial, sans-serif;
 }
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 
 :root {
   --violeta-suave: #e6d5ff;
@@ -132,13 +137,13 @@ button.agregar-fx:hover {
 }
 
 /* === FX GRID (botonera) === */
-.fx-grid {
-  display: grid;
+#misfx .fx-grid {
+  display: grid ;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
+  gap: 15px ;
 }
 
-.fx-item {
+#misfx .fx-item {
   position: relative;
   background: #f9f9f9;
   border-radius: 12px;
@@ -146,6 +151,7 @@ button.agregar-fx:hover {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+
 }
 
 .fx-item:hover {
@@ -189,16 +195,6 @@ button.agregar-fx:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 15px;
-}
-
-.fx-item {
-  position: relative;
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
 }
 
 .fx-item:hover {
