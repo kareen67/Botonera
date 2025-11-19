@@ -21,10 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", () => {
         document.querySelectorAll(".menu-opciones").forEach(m => m.classList.remove("activo"));
     });
-
     // === TABS ===
     const tabs = document.querySelectorAll(".tab");
-    const sections = document.querySelectorAll("#misFx, #institucionales");
+    const sections = document.querySelectorAll("#misfx, #institucionales");
     const openModalBtn = document.getElementById("openModal");
 
     tabs.forEach(tab => {
@@ -35,33 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
             sections.forEach(s => s.classList.add("hidden"));
             document.getElementById(tab.dataset.target).classList.remove("hidden");
 
-            // Ocultar o mostrar el botón Agregar FX según la pestaña
-            if (tab.dataset.target === "misFx") {
-                openModalBtn.style.display = "inline-flex"; // visible
+            // Mostrar botón solo en Mis FX
+            if (tab.dataset.target.toLowerCase() === "misfx") {
+                openModalBtn.style.display = "inline-flex";
             } else {
-                openModalBtn.style.display = "none"; // oculto
+                openModalBtn.style.display = "none";
             }
         });
     });
 
     // === MODALES ===
     const modalAgregar = document.getElementById("modalAgregar");
-    const modalAgregar2 = document.getElementById("modalAgregar");
     const modalEditar = document.getElementById("modalEditar");
     const modalEliminar = document.getElementById("modalEliminar");
 
     // Abrir modal de AGREGAR (solo FX personal)
-    openModalBtn.addEventListener("click", () => {
-        modalAgregar.querySelector("h2").textContent = "Agregar Nuevo FX Personal";
-        modalAgregar.style.display = "flex";
-    });
+    // === BOTÓN AGREGAR SOLO SI EXISTE ===
+    if (openModalBtn) {
+        openModalBtn.addEventListener("click", () => {
+            modalAgregar.querySelector("h2").textContent = "Agregar Nuevo FX Personal";
+            modalAgregar.style.display = "flex";
+        });
+    }
 
-
-      // Abrir modal de AGREGAR (solo FX personal)
-    openModalBtn.addEventListener("click", () => {
-        modalAgregar2.querySelector("h2").textContent = "Agregar Nuevo FX Institucional";
-        modalAgregar2.style.display = "flex";
-    });
 
     // Cerrar botones genéricos de los modales
     document.querySelectorAll(".modal .cancelar").forEach(btn => {

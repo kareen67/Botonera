@@ -176,6 +176,20 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             .catch(err => console.error("Error al reproducir FX:", err));
     }
     </script>
+    <script>
+        document.getElementById("openModal").addEventListener("click", () => {
+            document.getElementById("modalAgregar").style.display = "flex";
+        });
+
+        // === Cerrar modal si hace clic fuera del contenido ===
+        document.querySelectorAll(".modal").forEach(modal => {
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -136,26 +136,36 @@ button.agregar-fx:hover {
 
 }
 
-/* === FX GRID (botonera) === */
-#misfx .fx-grid {
-  display: grid ;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px ;
+/* === FX GRID (botonera) SOLO PARA MISFX === */
+#misfx{
+  width: 100%;
+  padding: 20px 0;
 }
 
-#misfx .fx-item {
+#misfx.fx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; /* separacion entre tarjetas */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tarjetas */
+#misfx.fx-item {
   position: relative;
   background: #f9f9f9;
   border-radius: 12px;
-  padding: 15px;
+  padding: 18px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease-in-out;
+  width: 100%; /* evita que se estiren demasiado */
+  box-sizing: border-box;
 }
 
-.fx-item:hover {
-  transform: translateY(-4px);
+/* Hover */
+#misfx.fx-item:hover {
+  transform: scale(1.03);
 }
 
 .fx-item h4 {
@@ -340,7 +350,7 @@ button.play-2 {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .categoria {

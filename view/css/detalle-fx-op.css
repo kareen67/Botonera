@@ -75,7 +75,7 @@ a.volver {
 .programa {
     background: var(--blanco);
     border-radius: 10px;
-    border-bottom: solid 4px #c77dff ; 
+    border-bottom: solid 4px #c77dff;
     padding: 25px;
     margin-bottom: 25px;
     position: relative;
@@ -152,7 +152,7 @@ a.volver {
 }
 
 /* ===== FX ITEM ===== */
-.detalle .fx-item {
+.fx-item {
     position: relative;
     background: var(--resaltado);
     border-radius: 16px;
@@ -171,11 +171,31 @@ a.volver {
 
 }
 
-.detalle .fx-item:hover {
+
+.fx-item:hover {
     background: var(--violeta-suave);
     transform: translateY(-3px);
 
 }
+
+/* ===== FORZAR GRID CORRECTO EN DETALLE ===== */
+
+.detalle .fx-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    width: 100%;
+    gap: 25px;
+}
+
+
+.detalle .fx-item {
+    display: block !important;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+
 
 /* Estado reproduciendo */
 .fx-item.reproduciendo {

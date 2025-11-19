@@ -17,6 +17,8 @@ ini_set('display_errors', 0);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efectos de Sonido (FX) personales y institucionales, puede agregar propios y reproducir institucionales
     </title>
+     <link rel="stylesheet" href="../../css/barra-reproducir.css">
+
     <link rel="stylesheet" href="../../css/fx-institucionales.css">
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="../../css/opciones.css">

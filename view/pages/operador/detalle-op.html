@@ -68,52 +68,69 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
                 </button>
             </div>
             <p class="subtexto">Gestiona los efectos de sonido del programa</p>
-
-            <div class="fx-lista">
-                <!-- Tarjeta FX -->
+            <div class="detalle">
                 <div class="detalle">
-                    <div class="fx-item">
-                        <span class="fx-etiqueta">Intro</span>
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                        </div>
+                    <div class="fx-lista">
+                        <!-- Tarjeta FX -->
 
-                        <div class="fx-info">
-                            <h4>Intro Programa</h4>
-                            <div class="fx-meta">
-                                <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
+                        <div class="fx-item">
+                            <span class="fx-etiqueta">Intro</span>
+                            <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            <div class="menu-opciones">
+                                <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                                <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
                             </div>
-                        </div>
 
-                        <button class="play"><i class="fa-solid fa-play"></i></button>
-                    </div>
-
-                    <div class="fx-item">
-                        <span class="fx-etiqueta">Transición</span>
-                        <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                        <div class="menu-opciones">
-                            <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                            <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                        </div>
-
-                        <div class="fx-info">
-                            <h4>Cortina Musical</h4>
-                            <div class="fx-meta">
-                                <span class="duracion"><i class="fa-regular fa-clock"></i> 0:08</span>
+                            <div class="fx-info">
+                                <h4>Intro Programa</h4>
+                                <div class="fx-meta">
+                                    <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
+                                </div>
                             </div>
+
+                            <button class="play"><i class="fa-solid fa-play"></i></button>
                         </div>
-                        <button class="play"><i class="fa-solid fa-play"></i></button>
+
+                        <div class="fx-item">
+                            <span class="fx-etiqueta">Transición</span>
+                            <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            <div class="menu-opciones">
+                                <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                                <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                            </div>
+
+                            <div class="fx-info">
+                                <h4>Cortina Musical</h4>
+                                <div class="fx-meta">
+                                    <span class="duracion"><i class="fa-regular fa-clock"></i> 0:08</span>
+                                </div>
+                            </div>
+                            <button class="play"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <div class="fx-item">
+                            <span class="fx-etiqueta">Transición</span>
+                            <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                            <div class="menu-opciones">
+                                <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                                <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                            </div>
+
+                            <div class="fx-info">
+                                <h4>Cortina Musical</h4>
+                                <div class="fx-meta">
+                                    <span class="duracion"><i class="fa-regular fa-clock"></i> 0:08</span>
+                                </div>
+                            </div>
+                            <button class="play"><i class="fa-solid fa-play"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
-        <!-- MODAL -->
+        <!-- MODAL agregar fx programa -->
         <div id="modal" class="modal">
             <div class="modal-content">
-                <h2>Agregar Nuevo FX </h2>
+                <h2>Agregar Nuevo FX de Programa</h2>
                 <label>Nombre:</label>
                 <input type="text" placeholder="Ej: Disparo Explosivo">
                 <label>Categoría:</label>

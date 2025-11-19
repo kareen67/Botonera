@@ -23,7 +23,6 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
 
     <link rel="stylesheet" href="../../css/fondo-musical.css">
     <link rel="stylesheet" href="../../css/header.css">
-    <!-- <link rel="stylesheet" href="../../css/fondo-musical.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -58,13 +57,13 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
 
             <!-- Tabs -->
             <div class="tabs">
-                <button class="tab active" data-target="misFx"><i class="fa-regular fa-user"></i> Mis FX</button>
+                <button class="tab active" data-target="misfx"><i class="fa-regular fa-user"></i> Mis FX</button>
                 <button class="tab" data-target="institucionales"><i class="fa-solid fa-building"></i> FX
                     Institucionales</button>
             </div>
 
             <!-- MIS FX (grid) -->
-            <div id="misFx" class="fx-grid">
+            <div id="misfx" class="fx-grid">
                 <div class="fx-item">
                     <span class="fx-etiqueta">Intro</span>
 
@@ -75,7 +74,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                     </div>
 
                     <div class="fx-info">
-                        <h4>Inicio Programa</h4>
+                        <h4>Inicio Programa1</h4>
                         <div class="fx-meta">
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
                         </div>
@@ -92,7 +91,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                         <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
                     </div>
                     <div class="fx-info">
-                        <h4>Cortina Noticias</h4>
+                        <h4>Cortina Noticias2</h4>
                         <div class="fx-meta">
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:10</span>
                         </div>
@@ -107,7 +106,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                 <div class="fx-item">
                     <span class="fx-etiqueta">Intro</span>
                     <div class="fx-info">
-                        <h4>Inicio Programa</h4>
+                        <h4>Inicio Programa3</h4>
                         <div class="fx-meta">
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
                         </div>
@@ -118,7 +117,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                 <div class="fx-item">
                     <span class="fx-etiqueta">Intro</span>
                     <div class="fx-info">
-                        <h4>Inicio Programa</h4>
+                        <h4>Inicio Programa4</h4>
                         <div class="fx-meta">
                             <span class="duracion"><i class="fa-regular fa-clock"></i> 0:15</span>
                         </div>
@@ -180,9 +179,11 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
     <script src="../../js/player.js"></script>
     <script src="../../js/barra-reproduccion.js"></script>
 
+    <script src="../../js/biblioteca.js"></script>
     <script src="../../js/modal-tabs.js"></script>
     <script src="../../js/reproducir.js"></script>
-    <script src="../../js/biblioteca.js"></script>
+
+
 </body>
 
 </html>
