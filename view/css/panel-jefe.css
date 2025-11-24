@@ -247,7 +247,8 @@ textarea {
 }
 
 .menu-opciones button:hover {
-    background: #f1e5ff;
+    background: #3b1f63;
+    color: #ffffff;
 }
 
 .acciones.activo .menu-opciones {

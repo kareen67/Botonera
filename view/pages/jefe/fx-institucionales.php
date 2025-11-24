@@ -105,24 +105,41 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             </div>
         </section>
 
-        <!-- MODAL -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <h2>Agregar Nuevo FX Personal </h2>
-                <label>Nombre:</label>
-                <input type="text" placeholder="Ej: Disparo Explosivo">
-                <label>Categoría:</label>
-                <input type="text" placeholder="Ej: Acción">
-                <label>Archivo:</label>
-                <input type="file">
-                <div class="modal-buttons">
-                    <button class="btn cancelar" id="closeModal">Cancelar</button>
-                    <button class="btn primary">Guardar</button>
-                </div>
+    </main>
+
+     <!-- MODAL EDITAR -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <h2>Editar FX Institucional</h2>
+            <label>Nombre:</label>
+            <input type="text" id="edit-nombre">
+
+            <label>Categoría:</label>
+            <input type="text" id="edit-categoria">
+
+            <label>Archivo:</label>
+            <input type="file" id="edit-archivo">
+
+            <div class="modal-buttons">
+                <button class="btn cancelar editar-cancelar">Cancelar</button>
+                <button class="btn primary">Guardar cambios</button>
             </div>
         </div>
+    </div>
 
-    </main>
+    <!-- MODAL ELIMINAR -->
+    <div id="modalEliminar" class="modal">
+        <div class="modal-content">
+            <h2>¿Eliminar FX?</h2>
+            <p>Esta acción no se puede deshacer.</p>
+
+            <div class="modal-buttons">
+                <button class="btn cancelar eliminar-cancelar">Cancelar</button>
+                <button class="btn primary">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
 
     <!-- MODAL: AGREGAR FX -->
     <div id="modalAgregar" class="modal">
@@ -157,8 +174,10 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             });
         });
     </script>
-    <script src="../../js/biblioteca.js"></script>
+    <!-- <script src="../../js/biblioteca.js"></script> -->
     <script src="../../js/fx-institucional.js"></script>
+        <script src="../../js/modal-inst-acciones.js"></script>
+
     <script>
     let audioActual = null;
 
@@ -176,18 +195,22 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
             .catch(err => console.error("Error al reproducir FX:", err));
     }
     </script>
-    <script>
+    <!-- abrir modal fx agregar -->
+   <script>
         document.getElementById("openModal").addEventListener("click", () => {
             document.getElementById("modalAgregar").style.display = "flex";
         });
 
-        // === Cerrar modal si hace clic fuera del contenido ===
         document.querySelectorAll(".modal").forEach(modal => {
             modal.addEventListener("click", (e) => {
                 if (e.target === modal) {
                     modal.style.display = "none";
                 }
             });
+        });
+        //  Cerrar modal con botón "Cancelar" 
+        document.querySelector("#modalAgregar .cancelar").addEventListener("click", () => {
+            document.getElementById("modalAgregar").style.display = "none";
         });
     </script>
 </body>
