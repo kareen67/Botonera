@@ -26,17 +26,17 @@ if (!empty($_POST["ingresar"])) {
                 // Redirección según rol
                 switch ($usuario->rol) {
                     case 'jefe':
-                        header("Location: ../view/pages/jefe/Panel-admin.php");
+                        header("Location: pages/jefe/Panel-admin.php");
                         break;
                     case 'operador':
-                        header("Location: ../view/pages/operador/fx-reproducir.php");
+                        header("Location: pages/operador/panel-operador.php");
                         break;
                     case 'productor':
-                        header("Location: ../view/pages/productor/panel-productor.html");
+                        header("Location: pages/productor/panel-productor.php");
                         break;
                     default:
                         // Si el rol no coincide con ninguno
-                        header("Location: ../index.html");
+                        header("Location: ../index.php");
                         break;
                 }
                 exit();

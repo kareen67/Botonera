@@ -113,29 +113,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                     echo "<p>No hay usuarios registrados.</p>";
                 endif;
                 ?>
-                <!-- <div class="usuario">
-                    <div>
-                        <h3>Ana Rodríguez</h3>
-                        <p>operador@radio.com</p>
-                    </div>
-                    <div class="acciones">
-                        <button><i class="fa-solid fa-pen"></i></button>
-                        <button><i class="fa-solid fa-trash"></i></button> 
-                        <span class="rol operador">Operador</span>
-                    </div>
-                </div>
-
-                <div class="usuario">
-                    <div>
-                        <h3>Luis García</h3>
-                        <p>productor@radio.com</p>
-                    </div>
-                    <div class="acciones">
-                        <button><i class="fa-solid fa-pen"></i></button>
-                        <button><i class="fa-solid fa-trash"></i></button>
-                        <span class="rol productor">Productor</span>
-                    </div>
-                </div> -->
+                
             </div>
         </section>
 
