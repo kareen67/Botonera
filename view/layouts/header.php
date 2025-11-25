@@ -1,3 +1,10 @@
+<?php
+// Siempre inicia sesión para acceder al rol
+session_start();
+// Si no hay rol, podés redirigir o dejar uno por defecto
+$rol = $_SESSION['rol'] ?? "operador";  
+// Roles posibles: jefe, operador, productor
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,17 +37,29 @@
         </div>
 
         <nav class="nav-links">
-            <!-- Jefe de operadores -->
-            <!-- <a href="#">Administración</a> -->
-            <a href="#">Mis Programas</a>
-            <a href="#">FX</a>
+            <?php if ($rol === "jefe"): ?>
+                <a href="../pages/jefe/administracion.php">Administración</a>
+                <a href="../pages/jefe/programas.php">Mis Programas</a>
+                <a href="../pages/jefe/fx.php">FX</a>
+
+            <?php elseif ($rol === "operador"): ?>
+                <a href="../pages/operador/programas.php">Mis Programas</a>
+                <a href="../pages/operador/fx.php">FX</a>
+
+            <?php elseif ($rol === "productor"): ?>
+                <a href="../pages/productor/programas.php">Mis Programas</a>
+                <a href="../pages/productor/fx.php">FX</a>
+            <?php endif; ?>
         </nav>
 
         <div class="user-section">
             <a href="../pages/Perfil.html" class="profile-icon">
                 <i class="fa-solid fa-user"></i>
             </a>
-            <button class="exit-btn">Exit</button>
+
+            <form action="../backend/logout.php" method="POST">
+                <button class="exit-btn">Exit</button>
+            </form>
         </div>
     </header>
 </body>
