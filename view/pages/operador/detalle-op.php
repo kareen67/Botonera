@@ -2,8 +2,10 @@
 session_start();
 if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
     header("Location: ../../../login.php");
-    exit();
+    exit();   
 }
+ // Header dinámico
+include "../../layouts/header.php";
 
 include_once("../../../controller/conexionBD.php");
 

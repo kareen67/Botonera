@@ -4,6 +4,8 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
     header("Location: ../../login.php");
     exit();
 }
+    // Header dinámico
+include "../../layouts/header.php";
 ?>
 
 <!DOCTYPE html>

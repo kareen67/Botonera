@@ -1,9 +1,9 @@
 <?php
-// Siempre inicia sesión para acceder al rol
-session_start();
-// Si no hay rol, podés redirigir o dejar uno por defecto
-$rol = $_SESSION['rol'] ?? "operador";  
-// Roles posibles: jefe, operador, productor
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$rol = $_SESSION["rol"] ?? "visitante";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -38,17 +38,20 @@ $rol = $_SESSION['rol'] ?? "operador";
 
         <nav class="nav-links">
             <?php if ($rol === "jefe"): ?>
-                <a href="../pages/jefe/administracion.php">Administración</a>
+                <a href="../pages/jefe/Panel-admin.php">Administración</a>
                 <a href="../pages/jefe/programas.php">Mis Programas</a>
                 <a href="../pages/jefe/fx.php">FX</a>
 
             <?php elseif ($rol === "operador"): ?>
-                <a href="../pages/operador/programas.php">Mis Programas</a>
+                <a href="../pages/operador/panel-operador.php">Mis Programas</a>
                 <a href="../pages/operador/fx.php">FX</a>
 
             <?php elseif ($rol === "productor"): ?>
-                <a href="../pages/productor/programas.php">Mis Programas</a>
+                <a href="../pages/productor/panel-productor.php">Mis Programas</a>
                 <a href="../pages/productor/fx.php">FX</a>
+
+            <?php else: ?>
+                <a href="../index.php">Inicio</a>
             <?php endif; ?>
         </nav>
 

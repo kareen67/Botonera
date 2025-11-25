@@ -4,6 +4,8 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
     header("Location: ../../login.php");
     exit();
 }
+ // Header dinámico
+include "../../layouts/header.php";
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 ini_set('display_errors', 0);
 

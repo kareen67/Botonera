@@ -1,10 +1,13 @@
-<!-- <?php
+<?php
 session_start();
 if (!isset($_SESSION["usuario"])) {
     header("Location: ../../login.php");
     exit();
 }
-?> -->
+    // Header dinámico
+include "../../layouts/header.php";
+?>
+
 
 
 <!DOCTYPE html>
