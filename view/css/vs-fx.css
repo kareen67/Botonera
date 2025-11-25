@@ -1,0 +1,74 @@
+.topbar {
+    position: sticky;
+    overflow: hidden;
+}
+
+html, body {
+  overflow-y: auto !important;
+}
+
+.fx-inst {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  gap: 20px; /* separación entre tarjetas */
+  
+}
+
+
+.fx-item {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease-in-out;
+  width: 100%; /* evita que se estiren demasiado */
+  box-sizing: border-box;
+}
+.contenido {
+  padding: 40px 80px;
+  
+}
+
+.descripcion {
+  background: var(--blanco);
+  border-radius: 10px;
+  border-bottom: 3px solid #a580e9;
+  border-bottom: solid 4px #c77dff;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.descripcion p {
+    padding-top: 20px;
+  font-size: 1rem;
+  color: #010101;
+}
+
+/* === TABS === */
+.tabs {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  background-color: var(--texto);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.tab {
+  background: var(--blanco);
+  color: var(--violet-dark);
+  font-weight: 600;
+  border: none;
+  padding: 14px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+.tab:hover {
+  background: var(--gold-accent);
+  transform: scale(1.1);
+
+}

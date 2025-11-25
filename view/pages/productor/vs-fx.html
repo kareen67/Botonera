@@ -14,7 +14,9 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efectos de Sonido (FX) personales y institucionales, puede agregar propios y reproducir institucionales
     </title>
-    <link rel="stylesheet" href="../../css/fx-institucionales.css">
+    <link rel="stylesheet" href="../../css/vs-fx.css">
+    <link rel="stylesheet" href="../../css/barra-reproducir.css">
+    <!-- <link rel="stylesheet" href="../../css/fx-institucionales.css"> -->
     <link rel="stylesheet" href="../../css/detalle-fx-op.css">
     <link rel="stylesheet" href="../../css/opciones.css">
     <link rel="stylesheet" href="../../css/modal-agregar.css">
@@ -40,8 +42,9 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
     </div>
 
     <main class="contenido">
-        <button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver a Programas</button>
-
+        <a href="../programas/programas.html" class="volver">
+            <i class="fa-solid fa-arrow-left"></i> Volver a Programas
+        </a>
         <div class="descripcion">
             <h2><i class="fa-solid fa-volume-high"></i> Efectos de Sonido (FX)</h2>
             <p class="subtexto">Reproduce la biblioteca institucional</p>
@@ -56,7 +59,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
                     Institucionales</button>
             </div>
             <!-- FX INSTITUCIONALES  -->
-            <div id="institucionales" class="fx-inst ">
+            <div id="institucionales" class="fx-inst">
                 <div class="fx-item">
                     <span class="fx-etiqueta">Intro</span>
                     <div class="fx-info">
@@ -84,10 +87,12 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "productor") {
         </section>
 
     </main>
+    <script src="../../js/player.js"></script>
+    <script src="../../js/barra-reproduccion.js"></script>
+    <script src="../../js/reproducir.js"></script>
 
     <script src="../../js/opciones.js"></script>
     <script src="../../js/modal-tabs.js"></script>
-    <script src="../../js/reproducir.js"></script>
 
 </body>
 

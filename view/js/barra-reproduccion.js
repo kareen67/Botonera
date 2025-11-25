@@ -18,10 +18,12 @@ function pausarGlobalPlayer() {
 
 
 function mostrarBarra() {
+    barra.classList.remove("hidden");
     barra.classList.add("active");
 }
 
 function ocultarBarra() {
+    barra.classList.add("hidden");
     barra.classList.remove("active");
 }
 

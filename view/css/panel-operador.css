@@ -67,17 +67,19 @@
 
 /* ===== TÍTULO ===== */
 .titulo {
-    text-align: center;
     margin-bottom: 40px;
+    text-align: left;
+    width: 100%;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .titulo h1 {
     font-size: 2rem;
     color: var(--violet-light);
     margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
     text-shadow: 0 0 10px var(--violeta-neon);
 }
@@ -99,6 +101,8 @@
     width: 100%;
     max-width: 1000px;
     align-items: stretch;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* Animación */
@@ -221,4 +225,3 @@
     transform: scale(1.03);
     padding-left: 15px;
 }
-

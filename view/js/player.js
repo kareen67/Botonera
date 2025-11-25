@@ -25,10 +25,10 @@
             <button id="gp-forward" class="glow"><i class="fa-solid fa-forward"></i></button>
             
             <!-- Tiempos -->
-            <span id="gp-current-time">00:00</span>
+            <!-- <span id="gp-current-time">00:00</span> -->
 
             <!-- Seek -->
-            <input type="range" id="gp-seek" value="0" min="0" max="100">
+            <!-- <input type="range" id="gp-seek" value="0" min="0" max="100"> -->
 
             <span id="gp-total-time">00:00</span>
 
