@@ -207,7 +207,7 @@ ini_set('display_errors', 0);
         </div>
     </main>
     <script src="../../js/player.js"></script>
-    <script src="../../js/barra-reproduccion.js"></script>
+    <!-- <script src="../../js/barra-reproduccion.js"></script> -->
 
     <script src="../../js/modal-tabs.js"></script>
     <script src="../../js/reproducir.js"></script>
@@ -223,7 +223,7 @@ ini_set('display_errors', 0);
         });
     </script> -->
     
-    <script>
+     <script>
     let audioActual = null;
 
     function reproducirFX(ruta) {
@@ -239,7 +239,7 @@ ini_set('display_errors', 0);
         .then(() => console.log("Reproduciendo:", ruta))
         .catch(err => console.error("Error al reproducir FX:", err));
     }
-</script>
+</script> 
 
 </body>
 

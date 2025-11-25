@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.innerHTML = '<i class="fa-solid fa-play"></i>';
 
                 // Detener barra global
-                pausarGlobalPlayer();
+                // pausarGlobalPlayer();
 
                 // Detener audio actual
                 if (audioActual) audioActual.pause();
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.innerHTML = '<i class="fa-solid fa-grip-lines-vertical"></i>';
 
                 // Reproducir barra global
-                reproducirGlobalPlayer(tituloFx, fxItem);
+                // reproducirGlobalPlayer(tituloFx, fxItem);
             }
 
         });

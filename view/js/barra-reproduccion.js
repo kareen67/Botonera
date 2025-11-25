@@ -32,7 +32,7 @@ document.querySelectorAll(".fx-item .play").forEach((btn, i) => {
     btn.addEventListener("click", () => {
 
         // Simulación de un audio distinto por cada tarjeta
-        let url = `../../audios/fx${i + 1}.mp3`;
+        let url = `../../uploads/fx${i + 1}.mp3`;
 
         if (audioActual) audioActual.pause();
 
