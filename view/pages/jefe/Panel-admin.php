@@ -97,14 +97,21 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                         </div>
                         <div class="acciones">
                             <span class="rol <?= strtolower($rol) ?>"><?= ucfirst($rol) ?></span>
-                            <!-- Botones opcionales -->
+
                             <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
 
                             <div class="menu-opciones">
-                                <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                                <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                                <!-- <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button> -->
+
+                                <!-- FORMULARIO PARA ELIMINAR USUARIO -->
+                                <form action="../../../model/eliminarUsuario.php" method="POST" 
+                                    onsubmit="return confirmarEliminacion(<?= $usuario['id_usuario'] ?>)">
+                                    <input type="hidden" name="id_usuario" value="<?= $usuario['id_usuario'] ?>">
+                                    <button type="submit" class="delete">
+                                        <i class="fa-solid fa-trash"></i> Eliminar
+                                    </button>
+                                </form>
                             </div>
-                            
                         </div>
                     </div>
                 <?php
@@ -162,8 +169,15 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                                 <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 <div class="menu-opciones">
                                     <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
-                                    <button class="delete"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                                </div>
+
+                                    <!-- FORM para eliminar un programa -->
+                                    <form action="../../../model/eliminarPrograma.php" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este programa y todos sus datos relacionados?');">
+                                        <input type="hidden" name="id_programa" value="<?= $id; ?>">
+                                        <button type="submit" class="delete">
+                                            <i class="fa-solid fa-trash"></i> Eliminar
+                                        </button>
+                                    </form>
+                                </div>  
                             </div>
                         </div>
                     <?php
@@ -172,35 +186,6 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "jefe") {
                         echo "<p>No hay programas registrados.</p>";
                     endif;
                     ?>
-
-                <!-- <div class="usuario">
-                    <div>
-                        <h3>Mañanas en Vivo</h3>
-                        <p>Programa diario de noticias y entretenimiento</p>
-                    </div>
-                    <div class="info">
-                        <span class="horario">08:00 - 10:00</span>
-                        <div class="acciones">
-                            <button><i class="fa-solid fa-pen"></i></button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="usuario">
-                    <div>
-                        <h3>Tarde Musical</h3>
-                        <p>Las mejores notas musicales</p>
-                    </div>
-                    <div class="info">
-                        <span class="horario">08:00 - 10:00</span>
-
-                        <div class="acciones">
-                            <button><i class="fa-solid fa-pen"></i></button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
 
