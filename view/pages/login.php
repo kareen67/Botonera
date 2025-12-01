@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
+    
     <div class="contenedor">
         <div class="lado-izquierdo">
             <div class="forma-abstracta forma-1"></div>
@@ -43,8 +45,8 @@
     </div>
 
     <?php 
-    include("../controller/conexionBD.php");
-    include("../model/login.php");
+    include("../../controller/conexionBD.php");
+    include("../../model/login.php");
     ?>
     
 </body>

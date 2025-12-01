@@ -37,7 +37,7 @@
         <div class="contenedor">
             <h1><i class="fa-solid fa-music"></i> Bienvenido a la Botonera SonarBo</h1>
             <p>Gestioná tus efectos de sonido de forma rápida y simple.</p>
-            <button onclick="location.href='login.html'">
+            <button onclick="location.href='view/pages/login.php'">
                 <i class="fa-solid fa-right-to-bracket"></i> Ingresar
             </button>
         </div>

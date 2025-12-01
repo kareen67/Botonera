@@ -1,11 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "operador") {
-    header("Location: ../../login.php");
+    header("Location: ../login.php");
     exit();
 }
-    // Header dinámico
-include "../../layouts/header.php";
+
 ?> 
 
 
@@ -25,6 +24,50 @@ include "../../layouts/header.php";
 </head>
 
 <body>
+    <!-- Mini Top Bar -->
+    <div class="mini-topbar">
+        <div class="socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <span class="contact">+54 9 11 1234-5678</span>
+        </div>
+        <p class="phrase">Conectando cada programa con su mejor sonido!!</p>
+    </div>
+
+    <!-- Header principal -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="../../img/SonarBo.png" alt="SonarBo">
+            <h1>SonarBo</h1>
+        </div>
+
+        <nav class="nav-links">
+            <?php if ($_SESSION["rol"] === "jefe"): ?>
+                <a href="Panel-admin.php">Administración</a>
+                <a href="fx-institucionales.php">FX</a>
+
+            <?php elseif ($_SESSION["rol"] === "operador"): ?>
+                <a href="panel-operador.php">Mis Programas</a>
+                <a href="fx-reproducir.php">FX</a>
+
+            <?php elseif ($_SESSION["rol"] === "productor"): ?>
+                <a href="panel-productor.php">Mis Programas</a>
+                <a href="vs-fx.php">FX</a>
+
+            <?php else: ?>
+                <a href="../../index.php">Inicio</a>
+            <?php endif; ?>
+        </nav>
+
+        <div class="user-section">
+            <a href="../Perfil.php" class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="../../../model/logout.php" class="exit-btn">Exit</a>
+
+        </div>
+    </header>
     <div class="musical-background">
         <span>♪</span>
         <span>♫</span>
